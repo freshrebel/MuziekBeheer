@@ -7,7 +7,7 @@ namespace DataModels
     public class SongArtist
     {
         public int SongId { get; set; }
-        public virtual Song Song { get; set; }
+        public Song Song { get; set; }
         public int ArtistId { get; set; }
         public Artist Artist { get; set; }
     }

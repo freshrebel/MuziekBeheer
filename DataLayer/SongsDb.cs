@@ -1,12 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using DataModels;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace DataLayer
 {
-    class SongsDb : DbContext
+    public class SongsDb : DbContext
     {
         public DbSet<Song> Songs { get; set; }
         public DbSet<Album> Albums { get; set; }
@@ -21,7 +18,7 @@ namespace DataLayer
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(
-                "data source=./;Database=SongsDb;integrated security = true;");
+                "data source=DESKTOP-5HSRSO8;Database=SongsDb;integrated security = true;");
             base.OnConfiguring(optionsBuilder);
         }
 

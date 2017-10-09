@@ -7,9 +7,9 @@ namespace DataModels
     public class SongAlbum
     {
         public int SongId { get; set; }
-        public virtual Song Song { get; set; }
+        public Song Song { get; set; }
         public int AlbumId { get; set; }
-        public virtual Album Album { get; set; }
+        public Album Album { get; set; }
         public int AlbumSequenceNumber { get; set; }
     }
 }
