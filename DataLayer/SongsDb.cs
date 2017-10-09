@@ -15,11 +15,13 @@ namespace DataLayer
         public DbSet<SongAlbum> SongAlbums { get; set; }
         public DbSet<Playlist> Playlists { get; set; }
         public DbSet<SongPlaylist> SongPlaylists { get; set; }
+        public DbSet<SongGenre> SongGenre { get; set; }
+        public DbSet<SongArtist> SongArtist { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(
-                "data source=.;Database=SongsDb;integrated security = true;");
+                "data source=./;Database=SongsDb;integrated security = true;");
             base.OnConfiguring(optionsBuilder);
         }
 

@@ -13,6 +13,5 @@ namespace DataModels
         public string BornAt { get; set; }
         public DateTime? BornOn { get; set; }
         public string Nationality { get; set; }
-        public List<Song> Songs { get; set; }
     }
 }

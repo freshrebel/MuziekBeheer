@@ -10,6 +10,6 @@ namespace DataModels
         public int GenreId { get; set; }
         [Required]
         public string GenreName { get; set; }
-        public List<Song> Songs { get; set; }
+
     }
 }
