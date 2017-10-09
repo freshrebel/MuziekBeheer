@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace DataModels
 {
-    class Genre
+    public class Genre
     {
         public int GenreId { get; set; }
         [Required]

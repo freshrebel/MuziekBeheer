@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DataModels
 {
-    class Playlist
+    public class Playlist
     {
         public int PlaylistId { get; set; }
         public string PlaylistName { get; set; }

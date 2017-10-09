@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace DataModels
 {
-    class Artist
+    public class Artist
     {
         public int ArtistId { get; set; }
         [Required]

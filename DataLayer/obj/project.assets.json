@@ -2614,6 +2614,19 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         }
+      },
+      "DataModels/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v1.1",
+        "dependencies": {
+          "Microsoft.NETCore.App": "1.1.2"
+        },
+        "compile": {
+          "bin/placeholder/DataModels.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DataModels.dll": {}
+        }
       }
     }
   },
@@ -7718,16 +7731,22 @@
         "system.xml.xpath.xdocument.4.0.1.nupkg.sha512",
         "system.xml.xpath.xdocument.nuspec"
       ]
+    },
+    "DataModels/1.0.0": {
+      "type": "project",
+      "path": "../DataModels/DataModels.csproj",
+      "msbuildProject": "../DataModels/DataModels.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v1.1": [
+      "DataModels >= 1.0.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 1.1.3",
       "Microsoft.NETCore.App >= 1.1.2"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\arno_\\.nuget\\packages\\": {}
+    "C:\\Users\\Safe\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
@@ -7735,14 +7754,14 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Users\\arno_\\source\\repos\\MuziekBeheer\\DataLayer\\DataLayer.csproj",
+      "projectUniqueName": "C:\\Users\\Safe\\Documents\\Arno\\AP\\ProgrammerenInDotNet\\MuziekBeheer\\DataLayer\\DataLayer.csproj",
       "projectName": "DataLayer",
-      "projectPath": "C:\\Users\\arno_\\source\\repos\\MuziekBeheer\\DataLayer\\DataLayer.csproj",
-      "packagesPath": "C:\\Users\\arno_\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\arno_\\source\\repos\\MuziekBeheer\\DataLayer\\obj\\",
+      "projectPath": "C:\\Users\\Safe\\Documents\\Arno\\AP\\ProgrammerenInDotNet\\MuziekBeheer\\DataLayer\\DataLayer.csproj",
+      "packagesPath": "C:\\Users\\Safe\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Safe\\Documents\\Arno\\AP\\ProgrammerenInDotNet\\MuziekBeheer\\DataLayer\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\arno_\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Safe\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7754,7 +7773,11 @@
       },
       "frameworks": {
         "netcoreapp1.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Safe\\Documents\\Arno\\AP\\ProgrammerenInDotNet\\MuziekBeheer\\DataModels\\DataModels.csproj": {
+              "projectPath": "C:\\Users\\Safe\\Documents\\Arno\\AP\\ProgrammerenInDotNet\\MuziekBeheer\\DataModels\\DataModels.csproj"
+            }
+          }
         }
       }
     },

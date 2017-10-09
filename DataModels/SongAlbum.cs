@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DataModels
 {
-    class SongAlbum
+    public class SongAlbum
     {
         public int SongId { get; set; }
         public virtual Song Song { get; set; }
