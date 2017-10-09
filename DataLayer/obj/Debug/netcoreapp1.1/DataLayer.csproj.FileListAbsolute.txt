@@ -7,3 +7,5 @@ C:\Users\Safe\Documents\Arno\AP\ProgrammerenInDotNet\MuziekBeheer\DataLayer\bin\
 C:\Users\Safe\Documents\Arno\AP\ProgrammerenInDotNet\MuziekBeheer\DataLayer\obj\Debug\netcoreapp1.1\DataLayer.csprojResolveAssemblyReference.cache
 C:\Users\Safe\Documents\Arno\AP\ProgrammerenInDotNet\MuziekBeheer\DataLayer\obj\Debug\netcoreapp1.1\DataLayer.csproj.CoreCompileInputs.cache
 C:\Users\Safe\Documents\Arno\AP\ProgrammerenInDotNet\MuziekBeheer\DataLayer\obj\Debug\netcoreapp1.1\DataLayer.AssemblyInfo.cs
+C:\Users\arno_\source\repos\MuziekBeheer\DataLayer\bin\Debug\netcoreapp1.1\DataModels.dll
+C:\Users\arno_\source\repos\MuziekBeheer\DataLayer\bin\Debug\netcoreapp1.1\DataModels.pdb
