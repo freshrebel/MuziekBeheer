@@ -7037,7 +7037,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Safe\\.nuget\\packages\\": {}
+    "C:\\Users\\arno_\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
@@ -7045,14 +7045,14 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Users\\Safe\\Documents\\Arno\\AP\\ProgrammerenInDotNet\\MuziekBeheer\\DataModels\\DataModels.csproj",
+      "projectUniqueName": "C:\\Users\\arno_\\source\\repos\\MuziekBeheer\\DataModels\\DataModels.csproj",
       "projectName": "DataModels",
-      "projectPath": "C:\\Users\\Safe\\Documents\\Arno\\AP\\ProgrammerenInDotNet\\MuziekBeheer\\DataModels\\DataModels.csproj",
-      "packagesPath": "C:\\Users\\Safe\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Safe\\Documents\\Arno\\AP\\ProgrammerenInDotNet\\MuziekBeheer\\DataModels\\obj\\",
+      "projectPath": "C:\\Users\\arno_\\source\\repos\\MuziekBeheer\\DataModels\\DataModels.csproj",
+      "packagesPath": "C:\\Users\\arno_\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\arno_\\source\\repos\\MuziekBeheer\\DataModels\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Safe\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\arno_\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
