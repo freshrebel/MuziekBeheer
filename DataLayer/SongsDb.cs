@@ -23,10 +23,12 @@ namespace DataLayer
             base.OnConfiguring(optionsBuilder);
         }
 
-        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        //{
-        //    modelBuilder.Entity<SongAlbum>().HasKey(k => new { k.AlbumId, k.SongId });
-        //    modelBuilder.Entity<SongPlaylist>().HasKey(k => new { k.SongId, k.PlaylistId });
-        //}
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<SongAlbum>().HasKey(k => new { k.AlbumId, k.SongId });
+            modelBuilder.Entity<SongPlaylist>().HasKey(k => new { k.SongId, k.PlaylistId });
+            modelBuilder.Entity<SongGenre>().HasKey(k => new { k.SongId, k.GenreId });
+            modelBuilder.Entity<SongArtist>().HasKey(k => new { k.SongId, k.ArtistId });
+        }
     }
 }

@@ -9,3 +9,9 @@ C:\Users\Safe\Documents\Arno\AP\ProgrammerenInDotNet\MuziekBeheer\DataLayer\obj\
 C:\Users\Safe\Documents\Arno\AP\ProgrammerenInDotNet\MuziekBeheer\DataLayer\obj\Debug\netcoreapp1.1\DataLayer.AssemblyInfo.cs
 C:\Users\arno_\source\repos\MuziekBeheer\DataLayer\bin\Debug\netcoreapp1.1\DataModels.dll
 C:\Users\arno_\source\repos\MuziekBeheer\DataLayer\bin\Debug\netcoreapp1.1\DataModels.pdb
+C:\Users\Safe\Documents\Arno\AP\ProgrammerenInDotNet\MuziekBeheer\DataLayer\bin\Debug\netcoreapp1.1\DataLayer.dll
+C:\Users\Safe\Documents\Arno\AP\ProgrammerenInDotNet\MuziekBeheer\DataLayer\bin\Debug\netcoreapp1.1\DataLayer.pdb
+C:\Users\Safe\Documents\Arno\AP\ProgrammerenInDotNet\MuziekBeheer\DataLayer\bin\Debug\netcoreapp1.1\DataModels.dll
+C:\Users\Safe\Documents\Arno\AP\ProgrammerenInDotNet\MuziekBeheer\DataLayer\bin\Debug\netcoreapp1.1\DataModels.pdb
+C:\Users\Safe\Documents\Arno\AP\ProgrammerenInDotNet\MuziekBeheer\DataLayer\obj\Debug\netcoreapp1.1\DataLayer.dll
+C:\Users\Safe\Documents\Arno\AP\ProgrammerenInDotNet\MuziekBeheer\DataLayer\obj\Debug\netcoreapp1.1\DataLayer.pdb
