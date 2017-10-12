@@ -1,0 +1,10 @@
+C:\Users\arno_\source\repos\MuziekBeheer\DataLayer\bin\Debug\netcoreapp1.1\DataLayerCore.deps.json
+C:\Users\arno_\source\repos\MuziekBeheer\DataLayer\bin\Debug\netcoreapp1.1\DataLayerCore.dll
+C:\Users\arno_\source\repos\MuziekBeheer\DataLayer\bin\Debug\netcoreapp1.1\DataLayerCore.pdb
+C:\Users\arno_\source\repos\MuziekBeheer\DataLayer\bin\Debug\netcoreapp1.1\DataModels.dll
+C:\Users\arno_\source\repos\MuziekBeheer\DataLayer\bin\Debug\netcoreapp1.1\DataModels.pdb
+C:\Users\arno_\source\repos\MuziekBeheer\DataLayer\obj\Debug\netcoreapp1.1\DataLayerCore.csprojResolveAssemblyReference.cache
+C:\Users\arno_\source\repos\MuziekBeheer\DataLayer\obj\Debug\netcoreapp1.1\DataLayerCore.csproj.CoreCompileInputs.cache
+C:\Users\arno_\source\repos\MuziekBeheer\DataLayer\obj\Debug\netcoreapp1.1\DataLayerCore.AssemblyInfo.cs
+C:\Users\arno_\source\repos\MuziekBeheer\DataLayer\obj\Debug\netcoreapp1.1\DataLayerCore.dll
+C:\Users\arno_\source\repos\MuziekBeheer\DataLayer\obj\Debug\netcoreapp1.1\DataLayerCore.pdb

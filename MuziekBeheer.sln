@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MuziekBeheer", "MuziekBehee
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataLayerCore", "DataLayer\DataLayerCore.csproj", "{FEBEB74C-3DD2-4D3F-9ED1-CC75484ED66E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataModels", "DataModels\DataModels.csproj", "{92B52741-1F97-4A6D-B6DE-54568B5C9C7D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataModelsCore", "DataModels\DataModelsCore.csproj", "{92B52741-1F97-4A6D-B6DE-54568B5C9C7D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataLayerStandard", "DataLayerStandard\DataLayerStandard.csproj", "{53AA1692-8639-4862-A413-5D6998F432B0}"
 EndProject

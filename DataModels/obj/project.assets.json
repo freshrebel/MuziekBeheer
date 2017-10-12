@@ -7045,9 +7045,9 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Users\\arno_\\source\\repos\\MuziekBeheer\\DataModels\\DataModels.csproj",
-      "projectName": "DataModels",
-      "projectPath": "C:\\Users\\arno_\\source\\repos\\MuziekBeheer\\DataModels\\DataModels.csproj",
+      "projectUniqueName": "C:\\Users\\arno_\\source\\repos\\MuziekBeheer\\DataModels\\DataModelsCore.csproj",
+      "projectName": "DataModelsCore",
+      "projectPath": "C:\\Users\\arno_\\source\\repos\\MuziekBeheer\\DataModels\\DataModelsCore.csproj",
       "packagesPath": "C:\\Users\\arno_\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\arno_\\source\\repos\\MuziekBeheer\\DataModels\\obj\\",
       "projectStyle": "PackageReference",

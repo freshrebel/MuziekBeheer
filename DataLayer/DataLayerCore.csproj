@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DataModels\DataModels.csproj" />
+    <ProjectReference Include="..\DataModels\DataModelsCore.csproj" />
   </ItemGroup>
 
 </Project>

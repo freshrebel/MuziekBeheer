@@ -322,13 +322,13 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DataLayer\DataLayerCore.csproj">
-      <Project>{febeb74c-3dd2-4d3f-9ed1-cc75484ed66e}</Project>
-      <Name>DataLayerCore</Name>
+    <ProjectReference Include="..\DataLayerFramework\DataLayerFramework.csproj">
+      <Project>{66d0e14b-0e45-40ea-b9bd-52ec98833c9c}</Project>
+      <Name>DataLayerFramework</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DataModels\DataModels.csproj">
+    <ProjectReference Include="..\DataModels\DataModelsCore.csproj">
       <Project>{92b52741-1f97-4a6d-b6de-54568b5c9c7d}</Project>
-      <Name>DataModels</Name>
+      <Name>DataModelsCore</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
