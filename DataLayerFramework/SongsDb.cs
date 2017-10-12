@@ -2,13 +2,14 @@
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace DataLayerFramework
 {
-    class SongsDb
+    public class SongsDb : DbContext
     {
         public DbSet<Song> Songs { get; set; }
         public DbSet<Album> Albums { get; set; }
@@ -20,7 +21,7 @@ namespace DataLayerFramework
         public DbSet<SongGenre> SongGenres { get; set; }
         public DbSet<SongArtist> SongArtists { get; set; }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<SongAlbum>().HasKey(k => new { k.AlbumId, k.SongId });
             modelBuilder.Entity<SongPlaylist>().HasKey(k => new { k.SongId, k.PlaylistId });
