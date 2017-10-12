@@ -8,9 +8,10 @@ using DataLayer;
 namespace DataLayer.Migrations
 {
     [DbContext(typeof(SongsDb))]
-    partial class SongsDbModelSnapshot : ModelSnapshot
+    [Migration("20171012121428_makeBpmAndRatingNullable")]
+    partial class makeBpmAndRatingNullable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.3")
@@ -117,7 +118,7 @@ namespace DataLayer.Migrations
 
                     b.HasIndex("ArtistId");
 
-                    b.ToTable("SongArtists");
+                    b.ToTable("SongArtist");
                 });
 
             modelBuilder.Entity("DataModels.SongGenre", b =>
@@ -130,7 +131,7 @@ namespace DataLayer.Migrations
 
                     b.HasIndex("GenreId");
 
-                    b.ToTable("SongGenres");
+                    b.ToTable("SongGenre");
                 });
 
             modelBuilder.Entity("DataModels.SongPlaylist", b =>

@@ -12,8 +12,8 @@ namespace DataLayer
         public DbSet<SongAlbum> SongAlbums { get; set; }
         public DbSet<Playlist> Playlists { get; set; }
         public DbSet<SongPlaylist> SongPlaylists { get; set; }
-        public DbSet<SongGenre> SongGenre { get; set; }
-        public DbSet<SongArtist> SongArtist { get; set; }
+        public DbSet<SongGenre> SongGenres { get; set; }
+        public DbSet<SongArtist> SongArtists { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

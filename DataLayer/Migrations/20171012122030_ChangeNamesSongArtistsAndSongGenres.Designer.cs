@@ -8,9 +8,10 @@ using DataLayer;
 namespace DataLayer.Migrations
 {
     [DbContext(typeof(SongsDb))]
-    partial class SongsDbModelSnapshot : ModelSnapshot
+    [Migration("20171012122030_ChangeNamesSongArtistsAndSongGenres")]
+    partial class ChangeNamesSongArtistsAndSongGenres
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.3")
