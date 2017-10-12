@@ -8148,9 +8148,9 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Users\\arno_\\source\\repos\\MuziekBeheer\\DataLayer\\DataLayer.csproj",
-      "projectName": "DataLayer",
-      "projectPath": "C:\\Users\\arno_\\source\\repos\\MuziekBeheer\\DataLayer\\DataLayer.csproj",
+      "projectUniqueName": "C:\\Users\\arno_\\source\\repos\\MuziekBeheer\\DataLayer\\DataLayerCore.csproj",
+      "projectName": "DataLayerCore",
+      "projectPath": "C:\\Users\\arno_\\source\\repos\\MuziekBeheer\\DataLayer\\DataLayerCore.csproj",
       "packagesPath": "C:\\Users\\arno_\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\arno_\\source\\repos\\MuziekBeheer\\DataLayer\\obj\\",
       "projectStyle": "PackageReference",
