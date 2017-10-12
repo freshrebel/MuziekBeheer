@@ -8,8 +8,8 @@ using DataLayer;
 namespace DataLayer.Migrations
 {
     [DbContext(typeof(SongsDb))]
-    [Migration("20171009201310_addSongLength")]
-    partial class addSongLength
+    [Migration("20171012123235_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -24,7 +24,7 @@ namespace DataLayer.Migrations
 
                     b.Property<string>("AlbumName");
 
-                    b.Property<DateTime>("AlbumReleaseDate");
+                    b.Property<DateTime?>("AlbumReleaseDate");
 
                     b.HasKey("AlbumId");
 
@@ -40,7 +40,7 @@ namespace DataLayer.Migrations
 
                     b.Property<string>("BornAt");
 
-                    b.Property<DateTime>("BornOn");
+                    b.Property<DateTime?>("BornOn");
 
                     b.Property<string>("Nationality");
 
@@ -78,15 +78,15 @@ namespace DataLayer.Migrations
                     b.Property<int>("SongId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int>("Bpm");
+                    b.Property<int?>("Bpm");
 
-                    b.Property<TimeSpan>("Lenght");
+                    b.Property<TimeSpan?>("Lenght");
 
-                    b.Property<int>("Rating");
+                    b.Property<int?>("Rating");
 
                     b.Property<string>("SongName");
 
-                    b.Property<DateTime>("SongReleaseDate");
+                    b.Property<DateTime?>("SongReleaseDate");
 
                     b.HasKey("SongId");
 
@@ -118,7 +118,7 @@ namespace DataLayer.Migrations
 
                     b.HasIndex("ArtistId");
 
-                    b.ToTable("SongArtist");
+                    b.ToTable("SongArtists");
                 });
 
             modelBuilder.Entity("DataModels.SongGenre", b =>
@@ -131,7 +131,7 @@ namespace DataLayer.Migrations
 
                     b.HasIndex("GenreId");
 
-                    b.ToTable("SongGenre");
+                    b.ToTable("SongGenres");
                 });
 
             modelBuilder.Entity("DataModels.SongPlaylist", b =>
@@ -140,7 +140,7 @@ namespace DataLayer.Migrations
 
                     b.Property<int>("PlaylistId");
 
-                    b.Property<DateTime>("DateAdded");
+                    b.Property<DateTime?>("DateAdded");
 
                     b.Property<int>("PlaylistSequence");
 

@@ -5,10 +5,24 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace DataLayer.Migrations
 {
-    public partial class test2 : Migration
+    public partial class InitialCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.CreateTable(
+                name: "Albums",
+                columns: table => new
+                {
+                    AlbumId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    AlbumName = table.Column<string>(nullable: true),
+                    AlbumReleaseDate = table.Column<DateTime>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Albums", x => x.AlbumId);
+                });
+
             migrationBuilder.CreateTable(
                 name: "Artists",
                 columns: table => new
@@ -17,7 +31,7 @@ namespace DataLayer.Migrations
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     ArtistName = table.Column<string>(nullable: true),
                     BornAt = table.Column<string>(nullable: true),
-                    BornOn = table.Column<DateTime>(nullable: false),
+                    BornOn = table.Column<DateTime>(nullable: true),
                     Nationality = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
@@ -57,10 +71,11 @@ namespace DataLayer.Migrations
                 {
                     SongId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Bpm = table.Column<int>(nullable: false),
-                    Rating = table.Column<int>(nullable: false),
+                    Bpm = table.Column<int>(nullable: true),
+                    Lenght = table.Column<TimeSpan>(nullable: true),
+                    Rating = table.Column<int>(nullable: true),
                     SongName = table.Column<string>(nullable: true),
-                    SongReleaseDate = table.Column<DateTime>(nullable: false)
+                    SongReleaseDate = table.Column<DateTime>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -93,7 +108,7 @@ namespace DataLayer.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "SongArtist",
+                name: "SongArtists",
                 columns: table => new
                 {
                     SongId = table.Column<int>(nullable: false),
@@ -101,15 +116,15 @@ namespace DataLayer.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_SongArtist", x => new { x.SongId, x.ArtistId });
+                    table.PrimaryKey("PK_SongArtists", x => new { x.SongId, x.ArtistId });
                     table.ForeignKey(
-                        name: "FK_SongArtist_Artists_ArtistId",
+                        name: "FK_SongArtists_Artists_ArtistId",
                         column: x => x.ArtistId,
                         principalTable: "Artists",
                         principalColumn: "ArtistId",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_SongArtist_Songs_SongId",
+                        name: "FK_SongArtists_Songs_SongId",
                         column: x => x.SongId,
                         principalTable: "Songs",
                         principalColumn: "SongId",
@@ -117,7 +132,7 @@ namespace DataLayer.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "SongGenre",
+                name: "SongGenres",
                 columns: table => new
                 {
                     SongId = table.Column<int>(nullable: false),
@@ -125,15 +140,15 @@ namespace DataLayer.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_SongGenre", x => new { x.SongId, x.GenreId });
+                    table.PrimaryKey("PK_SongGenres", x => new { x.SongId, x.GenreId });
                     table.ForeignKey(
-                        name: "FK_SongGenre_Genres_GenreId",
+                        name: "FK_SongGenres_Genres_GenreId",
                         column: x => x.GenreId,
                         principalTable: "Genres",
                         principalColumn: "GenreId",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_SongGenre_Songs_SongId",
+                        name: "FK_SongGenres_Songs_SongId",
                         column: x => x.SongId,
                         principalTable: "Songs",
                         principalColumn: "SongId",
@@ -146,7 +161,7 @@ namespace DataLayer.Migrations
                 {
                     SongId = table.Column<int>(nullable: false),
                     PlaylistId = table.Column<int>(nullable: false),
-                    DateAdded = table.Column<DateTime>(nullable: false),
+                    DateAdded = table.Column<DateTime>(nullable: true),
                     PlaylistSequence = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
@@ -172,13 +187,13 @@ namespace DataLayer.Migrations
                 column: "SongId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_SongArtist_ArtistId",
-                table: "SongArtist",
+                name: "IX_SongArtists_ArtistId",
+                table: "SongArtists",
                 column: "ArtistId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_SongGenre_GenreId",
-                table: "SongGenre",
+                name: "IX_SongGenres_GenreId",
+                table: "SongGenres",
                 column: "GenreId");
 
             migrationBuilder.CreateIndex(
@@ -193,13 +208,16 @@ namespace DataLayer.Migrations
                 name: "SongAlbums");
 
             migrationBuilder.DropTable(
-                name: "SongArtist");
+                name: "SongArtists");
 
             migrationBuilder.DropTable(
-                name: "SongGenre");
+                name: "SongGenres");
 
             migrationBuilder.DropTable(
                 name: "SongPlaylists");
+
+            migrationBuilder.DropTable(
+                name: "Albums");
 
             migrationBuilder.DropTable(
                 name: "Artists");
