@@ -1,0 +1,7 @@
+C:\Users\arno_\source\repos\MuziekBeheer\DataModels\bin\Debug\netcoreapp1.1\DataModelsCore.deps.json
+C:\Users\arno_\source\repos\MuziekBeheer\DataModels\bin\Debug\netcoreapp1.1\DataModelsCore.dll
+C:\Users\arno_\source\repos\MuziekBeheer\DataModels\bin\Debug\netcoreapp1.1\DataModelsCore.pdb
+C:\Users\arno_\source\repos\MuziekBeheer\DataModels\obj\Debug\netcoreapp1.1\DataModelsCore.csproj.CoreCompileInputs.cache
+C:\Users\arno_\source\repos\MuziekBeheer\DataModels\obj\Debug\netcoreapp1.1\DataModelsCore.AssemblyInfo.cs
+C:\Users\arno_\source\repos\MuziekBeheer\DataModels\obj\Debug\netcoreapp1.1\DataModelsCore.dll
+C:\Users\arno_\source\repos\MuziekBeheer\DataModels\obj\Debug\netcoreapp1.1\DataModelsCore.pdb

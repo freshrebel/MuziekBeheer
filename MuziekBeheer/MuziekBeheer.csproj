@@ -46,6 +46,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
@@ -326,9 +327,9 @@
       <Project>{66d0e14b-0e45-40ea-b9bd-52ec98833c9c}</Project>
       <Name>DataLayerFramework</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DataModels\DataModelsCore.csproj">
-      <Project>{92b52741-1f97-4a6d-b6de-54568b5c9c7d}</Project>
-      <Name>DataModelsCore</Name>
+    <ProjectReference Include="..\DataModelsFramework\DataModelsFramework.csproj">
+      <Project>{2baa90e5-29a0-4ef9-b3e3-2d1b4849b0e8}</Project>
+      <Name>DataModelsFramework</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

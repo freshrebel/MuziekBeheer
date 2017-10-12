@@ -1,0 +1,6 @@
+C:\Users\arno_\source\repos\MuziekBeheer\DataModelsFramework\obj\Debug\DataModelsFramework.csprojResolveAssemblyReference.cache
+C:\Users\arno_\source\repos\MuziekBeheer\DataModelsFramework\obj\Debug\DataModelsFramework.csproj.CoreCompileInputs.cache
+C:\Users\arno_\source\repos\MuziekBeheer\DataModelsFramework\bin\Debug\DataModelsFramework.dll
+C:\Users\arno_\source\repos\MuziekBeheer\DataModelsFramework\bin\Debug\DataModelsFramework.pdb
+C:\Users\arno_\source\repos\MuziekBeheer\DataModelsFramework\obj\Debug\DataModelsFramework.dll
+C:\Users\arno_\source\repos\MuziekBeheer\DataModelsFramework\obj\Debug\DataModelsFramework.pdb

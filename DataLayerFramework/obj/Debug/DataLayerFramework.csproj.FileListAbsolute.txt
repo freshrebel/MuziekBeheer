@@ -1,0 +1,13 @@
+C:\Users\arno_\source\repos\MuziekBeheer\DataLayerFramework\obj\Debug\DataLayerFramework.csprojResolveAssemblyReference.cache
+C:\Users\arno_\source\repos\MuziekBeheer\DataLayerFramework\obj\Debug\DataLayerFramework.csproj.CoreCompileInputs.cache
+C:\Users\arno_\source\repos\MuziekBeheer\DataLayerFramework\bin\Debug\DataLayerFramework.dll.config
+C:\Users\arno_\source\repos\MuziekBeheer\DataLayerFramework\bin\Debug\DataLayerFramework.dll
+C:\Users\arno_\source\repos\MuziekBeheer\DataLayerFramework\bin\Debug\DataLayerFramework.pdb
+C:\Users\arno_\source\repos\MuziekBeheer\DataLayerFramework\bin\Debug\DataModelsFramework.dll
+C:\Users\arno_\source\repos\MuziekBeheer\DataLayerFramework\bin\Debug\EntityFramework.dll
+C:\Users\arno_\source\repos\MuziekBeheer\DataLayerFramework\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\arno_\source\repos\MuziekBeheer\DataLayerFramework\bin\Debug\DataModelsFramework.pdb
+C:\Users\arno_\source\repos\MuziekBeheer\DataLayerFramework\bin\Debug\EntityFramework.xml
+C:\Users\arno_\source\repos\MuziekBeheer\DataLayerFramework\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\arno_\source\repos\MuziekBeheer\DataLayerFramework\obj\Debug\DataLayerFramework.dll
+C:\Users\arno_\source\repos\MuziekBeheer\DataLayerFramework\obj\Debug\DataLayerFramework.pdb

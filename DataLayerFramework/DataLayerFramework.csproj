@@ -58,9 +58,9 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DataModels\DataModelsCore.csproj">
-      <Project>{92b52741-1f97-4a6d-b6de-54568b5c9c7d}</Project>
-      <Name>DataModelsCore</Name>
+    <ProjectReference Include="..\DataModelsFramework\DataModelsFramework.csproj">
+      <Project>{2baa90e5-29a0-4ef9-b3e3-2d1b4849b0e8}</Project>
+      <Name>DataModelsFramework</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

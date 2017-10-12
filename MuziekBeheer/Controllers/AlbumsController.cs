@@ -1,4 +1,4 @@
-﻿using DataLayer;
+﻿using DataLayerFramework;
 using System.Web.Mvc;
 
 namespace MuziekBeheer.Controllers
