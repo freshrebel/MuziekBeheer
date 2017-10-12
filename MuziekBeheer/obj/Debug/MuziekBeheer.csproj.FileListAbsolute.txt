@@ -88,10 +88,6 @@ C:\Users\arno_\source\repos\MuziekBeheer\MuziekBeheer\bin\Microsoft.AI.WindowsSe
 C:\Users\arno_\source\repos\MuziekBeheer\MuziekBeheer\bin\Microsoft.AI.Web.xml
 C:\Users\arno_\source\repos\MuziekBeheer\MuziekBeheer\obj\Debug\MuziekBeheer.dll
 C:\Users\arno_\source\repos\MuziekBeheer\MuziekBeheer\obj\Debug\MuziekBeheer.pdb
-C:\Users\arno_\source\repos\MuziekBeheer\MuziekBeheer\bin\EntityFramework.dll
-C:\Users\arno_\source\repos\MuziekBeheer\MuziekBeheer\bin\EntityFramework.SqlServer.dll
-C:\Users\arno_\source\repos\MuziekBeheer\MuziekBeheer\bin\EntityFramework.xml
-C:\Users\arno_\source\repos\MuziekBeheer\MuziekBeheer\bin\EntityFramework.SqlServer.xml
 C:\Users\Safe\Documents\Arno\AP\ProgrammerenInDotNet\MuziekBeheer\MuziekBeheer\bin\ApplicationInsights.config
 C:\Users\Safe\Documents\Arno\AP\ProgrammerenInDotNet\MuziekBeheer\MuziekBeheer\bin\roslyn\csc.exe
 C:\Users\Safe\Documents\Arno\AP\ProgrammerenInDotNet\MuziekBeheer\MuziekBeheer\bin\roslyn\csc.exe.config
