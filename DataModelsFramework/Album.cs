@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace DataModelsFramework
 {
@@ -7,6 +8,7 @@ namespace DataModelsFramework
     {
         public int AlbumId { get; set; }
         public string AlbumName { get; set; }
+        [DataType(DataType.Date)]
         public DateTime? AlbumReleaseDate { get; set; }
         public List<SongAlbum> SongAlbums { get; set; }
     }

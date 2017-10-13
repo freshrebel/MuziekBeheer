@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,7 @@ namespace DataModelsFramework
         public TimeSpan? Lenght { get; set; }
         public int? Bpm { get; set; }
         public int? Rating { get; set; }
+        [DataType(DataType.Date)]
         public DateTime? SongReleaseDate { get; set; }
         public List<SongArtist> SongArtists { get; set; }
         public List<SongGenre> SongGenres { get; set; }
