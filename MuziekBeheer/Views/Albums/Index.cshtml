@@ -14,9 +14,6 @@
         <th>
             @Html.DisplayNameFor(model => model.AlbumName)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.AlbumReleaseDate)
-        </th>
         <th></th>
     </tr>
 
@@ -24,9 +21,6 @@
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.AlbumName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AlbumReleaseDate)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.AlbumId }) |

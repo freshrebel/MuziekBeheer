@@ -48,7 +48,8 @@ namespace MuziekBeheer.Controllers
         // GET: Albums/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            var album = songsDb.Albums.Find(id);
+            return View(album);
         }
 
         // POST: Albums/Edit/5
