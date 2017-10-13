@@ -44,11 +44,19 @@ namespace MuziekBeheer.Controllers
         [HttpPost]
         public ActionResult Create(Album album)
         {
-            // TODO: check if already exists
 
-            songsDb.Albums.Add(album);
-            songsDb.SaveChanges();
-            return RedirectToAction("index");
+            var getAlbumByName = from a in songsDb.Albums
+                                    where a.AlbumName == album.AlbumName
+                                    select a;
+            
+            if (getAlbumByName.Count() == 0)
+            {
+                songsDb.Albums.Add(album);
+                songsDb.SaveChanges();
+                return RedirectToAction("index"); 
+            }
+
+            return View();
 
         }
 
@@ -92,16 +100,16 @@ namespace MuziekBeheer.Controllers
         public ActionResult Delete(int id, FormCollection collection)
         {
 
-            try
-            {
-                // TODO: Add delete logic here
+            var album = songsDb.Albums.Find(id);
 
-                return RedirectToAction("Index");
-            }
-            catch
+            if (album != null)
             {
-                return View();
+                songsDb.Albums.Remove(album);
+                songsDb.SaveChanges();
+                return RedirectToAction("index");
             }
+
+            return View();
         }
 
         protected override void Dispose(bool disposing)
