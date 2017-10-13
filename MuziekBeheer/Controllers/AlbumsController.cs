@@ -19,7 +19,8 @@ namespace MuziekBeheer.Controllers
         // GET: Albums/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            var album = songsDb.Albums.Find(id);
+            return View(album);
         }
 
         // GET: Albums/Create

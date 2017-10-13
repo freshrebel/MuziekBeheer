@@ -235,3 +235,7 @@ C:\Users\arno_\source\repos\MuziekBeheer\MuziekBeheer\bin\System.Collections.Imm
 C:\Users\arno_\source\repos\MuziekBeheer\MuziekBeheer\bin\System.Diagnostics.DiagnosticSource.xml
 C:\Users\arno_\source\repos\MuziekBeheer\MuziekBeheer\bin\System.Interactive.Async.xml
 C:\Users\arno_\source\repos\MuziekBeheer\MuziekBeheer\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\arno_\source\repos\MuziekBeheer\MuziekBeheer\bin\EntityFramework.dll
+C:\Users\arno_\source\repos\MuziekBeheer\MuziekBeheer\bin\EntityFramework.SqlServer.dll
+C:\Users\arno_\source\repos\MuziekBeheer\MuziekBeheer\bin\EntityFramework.xml
+C:\Users\arno_\source\repos\MuziekBeheer\MuziekBeheer\bin\EntityFramework.SqlServer.xml
