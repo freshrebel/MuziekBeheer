@@ -1,6 +1,8 @@
 ﻿using DataLayerFramework;
 using DataModelsFramework;
 using System.Web.Mvc;
+using System.Linq;
+using System.Collections.Generic;
 
 namespace MuziekBeheer.Controllers
 {
@@ -20,8 +22,12 @@ namespace MuziekBeheer.Controllers
         // GET: Albums/Details/5
         public ActionResult Details(int id)
         {
-            var album = songsDb.Albums.Find(id);
-            if(album == null)
+            var getAlbumByIdQuery = from a in songsDb.Albums.Include("SongAlbums.Song")
+                        where a.AlbumId == id
+                        select a;
+            Album album = getAlbumByIdQuery.ToList<Album>()[0];
+            album.SongAlbums = album.SongAlbums.OrderBy(a => a.AlbumSequenceNumber).ToList();
+            if (album == null)
             {
                 return View("NotFound");
             }

@@ -4,8 +4,6 @@
     ViewBag.Title = "Detail";
 }
 
-<h2>View</h2>
-
 <div>
     <h4>@Html.DisplayFor(model => model.AlbumName)</h4>
     <hr />
@@ -15,16 +13,20 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.AlbumReleaseDate)
+            @(Model.AlbumReleaseDate?.ToString("dd/MM/yyyy"))
         </dd>
 
     </dl>
 </div>
 <div>
-    @foreach(SongAlbum songAlbum in Model.SongAlbums)
+    <h5><u><b>Songs</b></u></h5>
+    @foreach (var song in Model.SongAlbums)
     {
-        <text>1</text>
+        @song.AlbumSequenceNumber.ToString() <text>&nbsp;</text>
+        @song.Song.SongName.ToString()
+        <br />
     }
+    <br />
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.AlbumId }) |
