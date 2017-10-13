@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DataLayerFramework;
+using DataModelsFramework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,16 +10,28 @@ namespace MuziekBeheer.Controllers
 {
     public class ArtistController : Controller
     {
+
+        SongsDb songsDb = new SongsDb();
+
         // GET: Artist
         public ActionResult Index()
         {
-            return View();
+            var artists = songsDb.Artists;
+            return View(artists);
         }
 
         // GET: Artist/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            var getArtistByIdQuery = from a in songsDb.Artists.Include("SongArtist.Song")
+                                    where a.ArtistId == id
+                                    select a;
+            Artist artist = getArtistByIdQuery.ToList<Artist>()[0];
+            if (artist == null)
+            {
+                return View("NotFound");
+            }
+            return View(artist);
         }
 
         // GET: Artist/Create
@@ -28,62 +42,74 @@ namespace MuziekBeheer.Controllers
 
         // POST: Artist/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(Artist artist)
         {
-            try
+            var getArtistByNameQuery = from a in songsDb.Artists
+                                       where a.ArtistName == artist.ArtistName
+                                       select a;
+            
+            if (getArtistByNameQuery.Count() == 0)
             {
-                // TODO: Add insert logic here
+                songsDb.Artists.Add(artist);
+                songsDb.SaveChanges();
+                return RedirectToAction("index");
+            }
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            return View();
         }
 
         // GET: Artist/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            Artist artist = songsDb.Artists.Find(id);
+            bool artistFound = artist != null;
+            if (artistFound)
+            {
+                return View(artist);
+            }
+            return View("ArtistNotFound");
         }
 
         // POST: Artist/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
-            try
-            {
-                // TODO: Add update logic here
+            Artist artist = songsDb.Artists.Find(id);
 
-                return RedirectToAction("Index");
-            }
-            catch
+            if (TryUpdateModel(artist))
             {
-                return View();
+                songsDb.SaveChanges();
+                return RedirectToAction("index");
             }
+
+            return View();
         }
 
         // GET: Artist/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            Artist artist = songsDb.Artists.Find(id);
+            return View(artist);
         }
 
         // POST: Artist/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(int id, Artist artist)
         {
-            try
-            {
-                // TODO: Add delete logic here
 
-                return RedirectToAction("Index");
-            }
-            catch
+            var getArtistByNameQuery = from a in songsDb.Artists
+                                       where a.ArtistName == artist.ArtistName
+                                       select a;
+            bool artistFound = getArtistByNameQuery.Count() != 0;
+
+            if (artistFound)
             {
-                return View();
+                songsDb.Artists.Remove(artist);
+                songsDb.SaveChanges();
+                return RedirectToAction("index");
             }
+
+            return View();
         }
     }
 }
