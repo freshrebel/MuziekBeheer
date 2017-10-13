@@ -28,7 +28,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.AlbumReleaseDate, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.AlbumReleaseDate, new { htmlAttributes = new { @Value = Model.AlbumReleaseDate.ToString("yyyy/MM/dd"), @class = "form-control" } })
+                @Html.EditorFor(model => model.AlbumReleaseDate, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.AlbumReleaseDate, "", new { @class = "text-danger" })
             </div>
         </div>

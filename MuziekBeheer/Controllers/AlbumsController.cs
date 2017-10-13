@@ -97,5 +97,11 @@ namespace MuziekBeheer.Controllers
                 return View();
             }
         }
+
+        protected override void Dispose(bool disposing)
+        {
+            songsDb.Dispose();
+            base.Dispose(disposing);
+        }
     }
 }
