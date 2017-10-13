@@ -23,7 +23,7 @@ namespace MuziekBeheer.Controllers
             var album = songsDb.Albums.Find(id);
             if(album == null)
             {
-                return HttpNotFound();
+                return View("NotFound");
             }
             return View(album);
         }
@@ -52,7 +52,7 @@ namespace MuziekBeheer.Controllers
             var album = songsDb.Albums.Find(id);
             if (album == null)
             {
-                return HttpNotFound();
+                return View("NotFound");
             }
             return View(album);
         }
@@ -76,7 +76,7 @@ namespace MuziekBeheer.Controllers
             var album = songsDb.Albums.Find(id);
             if (album == null)
             {
-                return HttpNotFound();
+                return View("NotFound");
             }
             return View(album);
         }
@@ -85,6 +85,7 @@ namespace MuziekBeheer.Controllers
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {
+
             try
             {
                 // TODO: Add delete logic here
