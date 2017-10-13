@@ -15,6 +15,7 @@ namespace DataModelsFramework
         public int? Bpm { get; set; }
         public int? Rating { get; set; }
         [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime? SongReleaseDate { get; set; }
         public List<SongArtist> SongArtists { get; set; }
         public List<SongGenre> SongGenres { get; set; }
