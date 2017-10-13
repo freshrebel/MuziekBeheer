@@ -20,6 +20,12 @@
 
     </dl>
 </div>
+<div>
+    @foreach(SongAlbum songAlbum in Model.SongAlbums)
+    {
+        <text>1</text>
+    }
+</div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.AlbumId }) |
     @Html.ActionLink("Back to List", "Index")

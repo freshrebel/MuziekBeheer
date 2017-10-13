@@ -1,4 +1,5 @@
 ﻿using DataLayerFramework;
+using DataModelsFramework;
 using System.Web.Mvc;
 
 namespace MuziekBeheer.Controllers
@@ -20,6 +21,10 @@ namespace MuziekBeheer.Controllers
         public ActionResult Details(int id)
         {
             var album = songsDb.Albums.Find(id);
+            if(album == null)
+            {
+                return HttpNotFound();
+            }
             return View(album);
         }
 
@@ -31,47 +36,49 @@ namespace MuziekBeheer.Controllers
 
         // POST: Albums/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(Album album)
         {
-            try
-            {
-                // TODO: Add insert logic here
+            // TODO: check if already exists
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            songsDb.Albums.Add(album);
+            songsDb.SaveChanges();
+            return RedirectToAction("index");
+
         }
 
         // GET: Albums/Edit/5
         public ActionResult Edit(int id)
         {
             var album = songsDb.Albums.Find(id);
+            if (album == null)
+            {
+                return HttpNotFound();
+            }
             return View(album);
         }
 
         // POST: Albums/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(int id, Album Album)
         {
-            try
+            var album = songsDb.Albums.Find(id);
+            if (TryUpdateModel(album))
             {
-                // TODO: Add update logic here
-
+                songsDb.SaveChanges();
                 return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
+            return View();
         }
 
         // GET: Albums/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            var album = songsDb.Albums.Find(id);
+            if (album == null)
+            {
+                return HttpNotFound();
+            }
+            return View(album);
         }
 
         // POST: Albums/Delete/5
