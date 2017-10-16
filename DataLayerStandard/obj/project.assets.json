@@ -3703,7 +3703,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\arno_\\.nuget\\packages\\": {}
+    "C:\\Users\\deckx\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
@@ -3711,14 +3711,14 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Users\\arno_\\source\\repos\\MuziekBeheer\\DataLayerStandard\\DataLayerStandard.csproj",
+      "projectUniqueName": "C:\\Users\\deckx\\Documents\\GitHub\\MuziekBeheer\\DataLayerStandard\\DataLayerStandard.csproj",
       "projectName": "DataLayerStandard",
-      "projectPath": "C:\\Users\\arno_\\source\\repos\\MuziekBeheer\\DataLayerStandard\\DataLayerStandard.csproj",
-      "packagesPath": "C:\\Users\\arno_\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\arno_\\source\\repos\\MuziekBeheer\\DataLayerStandard\\obj\\",
+      "projectPath": "C:\\Users\\deckx\\Documents\\GitHub\\MuziekBeheer\\DataLayerStandard\\DataLayerStandard.csproj",
+      "packagesPath": "C:\\Users\\deckx\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\deckx\\Documents\\GitHub\\MuziekBeheer\\DataLayerStandard\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\arno_\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\deckx\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

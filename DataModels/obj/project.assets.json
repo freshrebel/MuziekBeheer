@@ -7037,7 +7037,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\arno_\\.nuget\\packages\\": {}
+    "C:\\Users\\deckx\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
@@ -7045,14 +7045,14 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Users\\arno_\\source\\repos\\MuziekBeheer\\DataModels\\DataModelsCore.csproj",
+      "projectUniqueName": "C:\\Users\\deckx\\Documents\\GitHub\\MuziekBeheer\\DataModels\\DataModelsCore.csproj",
       "projectName": "DataModelsCore",
-      "projectPath": "C:\\Users\\arno_\\source\\repos\\MuziekBeheer\\DataModels\\DataModelsCore.csproj",
-      "packagesPath": "C:\\Users\\arno_\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\arno_\\source\\repos\\MuziekBeheer\\DataModels\\obj\\",
+      "projectPath": "C:\\Users\\deckx\\Documents\\GitHub\\MuziekBeheer\\DataModels\\DataModelsCore.csproj",
+      "packagesPath": "C:\\Users\\deckx\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\deckx\\Documents\\GitHub\\MuziekBeheer\\DataModels\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\arno_\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\deckx\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
