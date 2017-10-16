@@ -55,9 +55,10 @@ namespace MuziekBeheer.Controllers
                 songsDb.SaveChanges();
                 return RedirectToAction("index"); 
             }
-
-            return View();
-
+            else
+            {
+                return View("AlreadyExisting");
+            }
         }
 
         // GET: Albums/Edit/5

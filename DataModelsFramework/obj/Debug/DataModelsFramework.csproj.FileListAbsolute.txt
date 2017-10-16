@@ -4,3 +4,9 @@ C:\Users\arno_\source\repos\MuziekBeheer\DataModelsFramework\bin\Debug\DataModel
 C:\Users\arno_\source\repos\MuziekBeheer\DataModelsFramework\bin\Debug\DataModelsFramework.pdb
 C:\Users\arno_\source\repos\MuziekBeheer\DataModelsFramework\obj\Debug\DataModelsFramework.dll
 C:\Users\arno_\source\repos\MuziekBeheer\DataModelsFramework\obj\Debug\DataModelsFramework.pdb
+C:\Users\deckx\Documents\GitHub\MuziekBeheer\DataModelsFramework\bin\Debug\DataModelsFramework.dll
+C:\Users\deckx\Documents\GitHub\MuziekBeheer\DataModelsFramework\bin\Debug\DataModelsFramework.pdb
+C:\Users\deckx\Documents\GitHub\MuziekBeheer\DataModelsFramework\obj\Debug\DataModelsFramework.csprojResolveAssemblyReference.cache
+C:\Users\deckx\Documents\GitHub\MuziekBeheer\DataModelsFramework\obj\Debug\DataModelsFramework.csproj.CoreCompileInputs.cache
+C:\Users\deckx\Documents\GitHub\MuziekBeheer\DataModelsFramework\obj\Debug\DataModelsFramework.dll
+C:\Users\deckx\Documents\GitHub\MuziekBeheer\DataModelsFramework\obj\Debug\DataModelsFramework.pdb

@@ -264,7 +264,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AlbumsController.cs" />
-    <Compile Include="Controllers\ArtistController.cs" />
+    <Compile Include="Controllers\ArtistsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SongsController.cs" />
     <Compile Include="Global.asax.cs">
@@ -315,12 +315,13 @@
     <Content Include="Views\Albums\Create.cshtml" />
     <Content Include="Views\Albums\NotFound.cshtml" />
     <Content Include="Views\Albums\Delete.cshtml" />
-    <Content Include="Views\Artist\Create.cshtml" />
-    <Content Include="Views\Artist\Index.cshtml" />
-    <Content Include="Views\Artist\Edit.cshtml" />
-    <Content Include="Views\Artist\Details.cshtml" />
-    <Content Include="Views\Artist\Delete.cshtml" />
-    <Content Include="Views\Artist\NotFound.cshtml" />
+    <Content Include="Views\Artists\Create.cshtml" />
+    <Content Include="Views\Artists\Index.cshtml" />
+    <Content Include="Views\Artists\Edit.cshtml" />
+    <Content Include="Views\Artists\Details.cshtml" />
+    <Content Include="Views\Artists\Delete.cshtml" />
+    <Content Include="Views\Artists\NotFound.cshtml" />
+    <Content Include="Views\Albums\AlreadyExisting.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
