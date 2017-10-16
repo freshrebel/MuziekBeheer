@@ -44,6 +44,18 @@
 
     </dl>
 </div>
+
+<div>
+    <div>
+        <h5><u><b>Songs</b></u></h5>
+        @foreach (var song in Model.SongArtists)
+        {
+            @song.Song.SongName.ToString()
+            <br />
+        }
+        <br />
+    </div>
+</div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.ArtistId }) |
     @Html.ActionLink("Back to List", "Index")
