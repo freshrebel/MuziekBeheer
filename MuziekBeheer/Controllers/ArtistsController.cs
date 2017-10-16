@@ -23,7 +23,7 @@ namespace MuziekBeheer.Controllers
         // GET: Artist/Details/5
         public ActionResult Details(int id)
         {
-            var getArtistByIdQuery = from a in songsDb.Artists.Include("SongArtist.Song")
+            var getArtistByIdQuery = from a in songsDb.Artists.Include("SongArtists.Song")
                                     where a.ArtistId == id
                                     select a;
             Artist artist = getArtistByIdQuery.ToList<Artist>()[0];
