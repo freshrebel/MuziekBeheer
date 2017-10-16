@@ -315,10 +315,10 @@
     <Content Include="Views\Albums\Create.cshtml" />
     <Content Include="Views\Albums\NotFound.cshtml" />
     <Content Include="Views\Albums\Delete.cshtml" />
+    <Content Include="Views\Artist\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Artist\" />
     <Folder Include="Views\Songs\" />
   </ItemGroup>
   <ItemGroup>
