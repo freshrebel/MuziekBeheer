@@ -1,4 +1,4 @@
-﻿
+﻿@model Album
 @{
     ViewBag.Title = "AlreadyExisting";
 }
@@ -8,8 +8,10 @@
 @using (Html.BeginForm())
 {
     <div class="form-horizontal">
-        @:wilt u dit album bekijken?
-
+        @Html.HiddenFor(model => model.AlbumId)
+        <text>wilt u dit album bekijken?</text>
+        <input type="submit" value="Yes" class="btn btn-default" />
+        <input type="submit" value="No" class="btn btn-default" />
     </div>
 }
 

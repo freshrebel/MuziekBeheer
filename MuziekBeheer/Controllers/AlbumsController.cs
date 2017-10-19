@@ -57,7 +57,8 @@ namespace MuziekBeheer.Controllers
             }
             else
             {
-                return View("AlreadyExisting");
+                List<Album> existingAlbums = getAlbumByName.ToList();
+                return RedirectToAction("AlreadyExisting", existingAlbums[0]);
             }
         }
 
@@ -111,6 +112,17 @@ namespace MuziekBeheer.Controllers
             }
 
             return View();
+        }
+
+        public ActionResult AlreadyExisting(Album album)
+        {
+            return View("AlreadyExisting");
+        }
+
+        [HttpPost]
+        public ActionResult AlreadyExisting(int Albumid)
+        {
+            return RedirectToAction("Details", new { id = Albumid });
         }
 
         protected override void Dispose(bool disposing)
