@@ -44,9 +44,8 @@ namespace MuziekBeheer.Controllers
             }
             else
             {
-                //List<Genre> existingGenres = getGenreByNameQuery.ToList();
-                //return RedirectToAction("AlreadyExisting", existingGenres[0]);
-                return RedirectToAction("index");
+                List<Genre> existingGenres = getGenreByNameQuery.ToList();
+                return RedirectToAction("AlreadyExisting", existingGenres[0]);
             }
         }
 
@@ -98,6 +97,23 @@ namespace MuziekBeheer.Controllers
             {
                 return View();
             }
+        }
+
+        public ActionResult AlreadyExisting(Genre genre)
+        {
+            return View("AlreadyExisting");
+        }
+
+        [HttpPost]
+        public ActionResult AlreadyExisting(int GenreId)
+        {
+            return RedirectToAction("Details", new { id = GenreId });
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            songsDb.Dispose();
+            base.Dispose(disposing);
         }
     }
 }
