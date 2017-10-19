@@ -1,4 +1,5 @@
 ﻿using DataLayerFramework;
+using DataModelsFramework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,23 +29,36 @@ namespace MuziekBeheer.Controllers
 
         // POST: Genres/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(Genre genre)
         {
-            try
-            {
-                // TODO: Add insert logic here
+            var getGenreByNameQuery = from g in songsDb.Genres
+                                 where g.GenreName.ToLower().Trim() == genre.GenreName.ToLower().Trim()
+                                 select g;
 
-                return RedirectToAction("Index");
-            }
-            catch
+            bool genreExists = getGenreByNameQuery.Count() != 0;
+            if (!genreExists)
             {
-                return View();
+                songsDb.Genres.Add(genre);
+                songsDb.SaveChanges();
+                return RedirectToAction("index");
+            }
+            else
+            {
+                //List<Genre> existingGenres = getGenreByNameQuery.ToList();
+                //return RedirectToAction("AlreadyExisting", existingGenres[0]);
+                return RedirectToAction("index");
             }
         }
 
         // GET: Genres/Edit/5
         public ActionResult Edit(int id)
         {
+            //genre genre = songsdb.genres.find(id);
+            //if (genre == null)
+            //{
+            //    return view("notfound");
+            //}
+            //return view(genre);
             return View();
         }
 

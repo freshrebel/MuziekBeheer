@@ -324,6 +324,7 @@
     <Content Include="Views\Artists\NotFound.cshtml" />
     <Content Include="Views\Albums\AlreadyExisting.cshtml" />
     <Content Include="Views\Genres\Index.cshtml" />
+    <Content Include="Views\Genres\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
