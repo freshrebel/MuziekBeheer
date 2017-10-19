@@ -323,10 +323,10 @@
     <Content Include="Views\Artists\Delete.cshtml" />
     <Content Include="Views\Artists\NotFound.cshtml" />
     <Content Include="Views\Albums\AlreadyExisting.cshtml" />
+    <Content Include="Views\Genres\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Genres\" />
     <Folder Include="Views\Songs\" />
   </ItemGroup>
   <ItemGroup>

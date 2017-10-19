@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataLayerFramework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,10 +9,15 @@ namespace MuziekBeheer.Controllers
 {
     public class GenresController : Controller
     {
+
+        SongsDb songsDb = new SongsDb();
+
         // GET: Genres
         public ActionResult Index()
         {
-            return View();
+            var genres = songsDb.Genres;
+
+            return View(genres);
         }
 
         // GET: Genres/Details/5
