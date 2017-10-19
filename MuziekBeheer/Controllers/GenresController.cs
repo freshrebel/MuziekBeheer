@@ -20,12 +20,6 @@ namespace MuziekBeheer.Controllers
             return View(genres);
         }
 
-        // GET: Genres/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
-
         // GET: Genres/Create
         public ActionResult Create()
         {
