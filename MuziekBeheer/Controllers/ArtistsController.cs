@@ -96,13 +96,11 @@ namespace MuziekBeheer.Controllers
 
         // POST: Artist/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, Artist artist)
+        public ActionResult Delete(int id, FormCollection collection)
         {
 
-            var getArtistByNameQuery = from a in songsDb.Artists
-                                       where a.ArtistName == artist.ArtistName
-                                       select a;
-            bool artistFound = getArtistByNameQuery.Count() != 0;
+            Artist artist = songsDb.Artists.Find(id);
+            bool artistFound = artist.ArtistId != 0;
 
             if (artistFound)
             {
