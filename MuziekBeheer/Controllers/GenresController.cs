@@ -104,12 +104,6 @@ namespace MuziekBeheer.Controllers
             return View("AlreadyExisting");
         }
 
-        [HttpPost]
-        public ActionResult AlreadyExisting(int GenreId)
-        {
-            return RedirectToAction("Details", new { id = GenreId });
-        }
-
         protected override void Dispose(bool disposing)
         {
             songsDb.Dispose();
