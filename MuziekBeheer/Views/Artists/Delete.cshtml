@@ -32,7 +32,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.BornOn)
+            @(Model.BornOn?.ToString("dd/MM/yyyy"))
         </dd>
 
         <dt>
