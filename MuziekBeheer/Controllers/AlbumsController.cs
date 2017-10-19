@@ -46,7 +46,7 @@ namespace MuziekBeheer.Controllers
         {
 
             var getAlbumByName = from a in songsDb.Albums
-                                    where a.AlbumName == album.AlbumName
+                                    where a.AlbumName.ToLower().Trim() == album.AlbumName.ToLower().Trim()
                                     select a;
             
             if (getAlbumByName.Count() == 0)

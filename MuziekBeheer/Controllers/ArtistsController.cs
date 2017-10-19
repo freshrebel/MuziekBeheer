@@ -45,7 +45,7 @@ namespace MuziekBeheer.Controllers
         public ActionResult Create(Artist artist)
         {
             var getArtistByNameQuery = from a in songsDb.Artists
-                                       where a.ArtistName == artist.ArtistName
+                                       where a.ArtistName.ToLower().Trim() == artist.ArtistName.ToLower().Trim()
                                        select a;
             
             if (getArtistByNameQuery.Count() == 0)
