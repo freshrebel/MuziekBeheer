@@ -1,8 +1,0 @@
-C:\Users\arno_\source\repos\MuziekBeheer\DataLayerStandard\bin\Debug\netstandard1.4\DataLayerStandard.deps.json
-C:\Users\arno_\source\repos\MuziekBeheer\DataLayerStandard\bin\Debug\netstandard1.4\DataLayerStandard.dll
-C:\Users\arno_\source\repos\MuziekBeheer\DataLayerStandard\bin\Debug\netstandard1.4\DataLayerStandard.pdb
-C:\Users\arno_\source\repos\MuziekBeheer\DataLayerStandard\obj\Debug\netstandard1.4\DataLayerStandard.csprojResolveAssemblyReference.cache
-C:\Users\arno_\source\repos\MuziekBeheer\DataLayerStandard\obj\Debug\netstandard1.4\DataLayerStandard.csproj.CoreCompileInputs.cache
-C:\Users\arno_\source\repos\MuziekBeheer\DataLayerStandard\obj\Debug\netstandard1.4\DataLayerStandard.AssemblyInfo.cs
-C:\Users\arno_\source\repos\MuziekBeheer\DataLayerStandard\obj\Debug\netstandard1.4\DataLayerStandard.dll
-C:\Users\arno_\source\repos\MuziekBeheer\DataLayerStandard\obj\Debug\netstandard1.4\DataLayerStandard.pdb
