@@ -327,6 +327,7 @@
     <Content Include="Views\Genres\Create.cshtml" />
     <Content Include="Views\Genres\AlreadyExisting.cshtml" />
     <Content Include="Views\Genres\Delete.cshtml" />
+    <Content Include="Views\Genres\NotFound.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
