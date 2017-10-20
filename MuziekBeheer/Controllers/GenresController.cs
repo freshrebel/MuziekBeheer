@@ -32,8 +32,8 @@ namespace MuziekBeheer.Controllers
         public ActionResult Create(Genre genre)
         {
             var getGenreByNameQuery = from g in songsDb.Genres
-                                 where g.GenreName.ToLower().Trim() == genre.GenreName.ToLower().Trim()
-                                 select g;
+                                      where g.GenreName.ToLower().Trim() == genre.GenreName.ToLower().Trim()
+                                      select g;
 
             bool genreExists = getGenreByNameQuery.Count() != 0;
             if (!genreExists)
@@ -52,29 +52,26 @@ namespace MuziekBeheer.Controllers
         // GET: Genres/Edit/5
         public ActionResult Edit(int id)
         {
-            //genre genre = songsdb.genres.find(id);
-            //if (genre == null)
-            //{
-            //    return view("notfound");
-            //}
-            //return view(genre);
-            return View();
+            Genre genre = songsDb.Genres.Find(id);
+            bool genreExists = genre != null;
+            if (!genreExists)
+            {
+                return View("NotFound");
+            }
+            return View(genre);
         }
 
         // POST: Genres/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
-            try
+            Genre genre = songsDb.Genres.Find(id);
+            if (TryUpdateModel(genre))
             {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
+                songsDb.SaveChanges();
+                return RedirectToAction("index");
             }
-            catch
-            {
-                return View();
-            }
+            return View();
         }
 
         // GET: Genres/Delete/5

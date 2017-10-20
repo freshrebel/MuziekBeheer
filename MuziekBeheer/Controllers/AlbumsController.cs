@@ -77,7 +77,7 @@ namespace MuziekBeheer.Controllers
         [HttpPost]
         public ActionResult Edit(int id, Album Album)
         {
-            var album = songsDb.Albums.Find(id);
+            Album album = songsDb.Albums.Find(id);
             if (TryUpdateModel(album))
             {
                 songsDb.SaveChanges();
