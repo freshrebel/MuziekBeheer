@@ -25,7 +25,20 @@ namespace MuziekBeheer.Controllers
         // GET: Songs/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            var getSongByIdQuery = from s in songsDb.Songs.Include("SongAlbums.Albums")
+                                              .Include("SongPlaylists.Playlist")
+                                              .Include("SongArtists.Artist")
+                                              .Include("SongGenres.Genre")
+                        where s.SongId == id
+                        select s;
+            Song song = getSongByIdQuery.ToList()[0];
+
+            bool songExists = song != null;
+            if (!songExists)
+            {
+                return View("NotFound");
+            }
+            return View(song);
         }
 
         // GET: Songs/Create

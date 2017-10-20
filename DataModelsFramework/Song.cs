@@ -31,8 +31,48 @@ namespace DataModelsFramework
                 {
                     artistNames.Add(songArtist.Artist.ArtistName);
                 }
-                string t = string.Join(",", artistNames);
-                return t;
+                return string.Join(",", artistNames);
+            }
+        }
+
+        public string GenresToString
+        {
+            get
+            {
+                List<string> genreNames = new List<string>();
+                foreach (var songGenre in SongGenres)
+                {
+                    genreNames.Add(songGenre.Genre.GenreName);
+                }
+
+                return string.Join(",", genreNames);
+            }
+        }
+
+        public string AlbumsToString
+        {
+            get
+            {
+                List<string> albumNames = new List<string>();
+                foreach (var songAlbum in SongAlbums)
+                {
+                    albumNames.Add(songAlbum.Album.AlbumName);
+                }
+
+                return string.Join(",", albumNames);
+            }
+        }
+
+        public string PlaylistsToString
+        {
+            get
+            {
+                List<string> playlistNames = new List<string>();
+                foreach (var songPlaylists in SongPlaylists)
+                {
+                    playlistNames.Add(songPlaylists.Playlist.PlaylistName);
+                }
+                return string.Join(",", playlistNames);
             }
         }
     }
