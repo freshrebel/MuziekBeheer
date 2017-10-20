@@ -5,12 +5,6 @@ VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MuziekBeheer", "MuziekBeheer\MuziekBeheer.csproj", "{28975EE4-F7A0-476E-AF55-B96E17B82A27}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataLayerCore", "DataLayer\DataLayerCore.csproj", "{FEBEB74C-3DD2-4D3F-9ED1-CC75484ED66E}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataModelsCore", "DataModels\DataModelsCore.csproj", "{92B52741-1F97-4A6D-B6DE-54568B5C9C7D}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataLayerStandard", "DataLayerStandard\DataLayerStandard.csproj", "{53AA1692-8639-4862-A413-5D6998F432B0}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataLayerFramework", "DataLayerFramework\DataLayerFramework.csproj", "{66D0E14B-0E45-40EA-B9BD-52EC98833C9C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataModelsFramework", "DataModelsFramework\DataModelsFramework.csproj", "{2BAA90E5-29A0-4EF9-B3E3-2D1B4849B0E8}"
@@ -25,18 +19,6 @@ Global
 		{28975EE4-F7A0-476E-AF55-B96E17B82A27}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{28975EE4-F7A0-476E-AF55-B96E17B82A27}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{28975EE4-F7A0-476E-AF55-B96E17B82A27}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FEBEB74C-3DD2-4D3F-9ED1-CC75484ED66E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FEBEB74C-3DD2-4D3F-9ED1-CC75484ED66E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FEBEB74C-3DD2-4D3F-9ED1-CC75484ED66E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FEBEB74C-3DD2-4D3F-9ED1-CC75484ED66E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{92B52741-1F97-4A6D-B6DE-54568B5C9C7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{92B52741-1F97-4A6D-B6DE-54568B5C9C7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{92B52741-1F97-4A6D-B6DE-54568B5C9C7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{92B52741-1F97-4A6D-B6DE-54568B5C9C7D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{53AA1692-8639-4862-A413-5D6998F432B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{53AA1692-8639-4862-A413-5D6998F432B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{53AA1692-8639-4862-A413-5D6998F432B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{53AA1692-8639-4862-A413-5D6998F432B0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{66D0E14B-0E45-40EA-B9BD-52EC98833C9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{66D0E14B-0E45-40EA-B9BD-52EC98833C9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{66D0E14B-0E45-40EA-B9BD-52EC98833C9C}.Release|Any CPU.ActiveCfg = Release|Any CPU

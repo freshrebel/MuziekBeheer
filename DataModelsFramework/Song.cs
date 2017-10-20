@@ -21,5 +21,19 @@ namespace DataModelsFramework
         public List<SongGenre> SongGenres { get; set; }
         public List<SongAlbum> SongAlbums { get; set; }
         public List<SongPlaylist> SongPlaylists { get; set; }
+
+        public string ArtistsToString
+        {
+            get
+            {
+                List<string> artistNames = new List<string>();
+                foreach (var songArtist in SongArtists)
+                {
+                    artistNames.Add(songArtist.Artist.ArtistName);
+                }
+                string t = string.Join(",", artistNames);
+                return t;
+            }
+        }
     }
 }
