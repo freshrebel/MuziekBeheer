@@ -1,0 +1,16 @@
+﻿@model Artist
+@{
+    ViewBag.Title = "AlreadyExisting";
+}
+
+<h2>Deze artiest bestaat al.</h2>
+
+@using (Html.BeginForm())
+{
+    <div class="form-horizontal">
+        @Html.HiddenFor(model => model.ArtistId)
+        <text>wilt u deze artiest bekijken?</text>
+        <input type="submit" name="submit" value="yes" class="btn btn-default" />
+        <input type="submit" name="submit" value="no" class="btn btn-default" />
+    </div>
+}

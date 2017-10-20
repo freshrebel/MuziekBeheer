@@ -56,7 +56,8 @@ namespace MuziekBeheer.Controllers
             }
             else
             {
-                return View("AlreadyExisting");
+                List<Artist> existingArtists = getArtistByNameQuery.ToList();
+                return View("AlreadyExisting", existingArtists[0]);
             }
         }
 
@@ -110,6 +111,31 @@ namespace MuziekBeheer.Controllers
             }
 
             return View();
+        }
+
+        public ActionResult AlreadyExisting(Artist artist)
+        {
+            return View("AlreadyExisting");
+        }
+
+        [HttpPost]
+        public ActionResult AlreadyExisting(int Artistid, string submit)
+        {
+            bool viewDetails = submit == "yes";
+            if (viewDetails)
+            {
+                return RedirectToAction("Details", new { id = Artistid });
+            }
+            else
+            {
+                return RedirectToAction("index");
+            }
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            songsDb.Dispose();
+            base.Dispose(disposing);
         }
     }
 }
