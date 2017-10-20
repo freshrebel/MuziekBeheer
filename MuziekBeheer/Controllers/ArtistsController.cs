@@ -57,7 +57,7 @@ namespace MuziekBeheer.Controllers
             else
             {
                 List<Artist> existingArtists = getArtistByNameQuery.ToList();
-                return View("AlreadyExisting", existingArtists[0]);
+                return RedirectToAction("AlreadyExisting", existingArtists[0]);
             }
         }
 
