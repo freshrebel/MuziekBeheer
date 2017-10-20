@@ -330,10 +330,10 @@
     <Content Include="Views\Genres\NotFound.cshtml" />
     <Content Include="Views\Artists\AlreadyExisting.cshtml" />
     <Content Include="Views\Genres\Edit.cshtml" />
+    <Content Include="Views\Songs\index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Songs\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

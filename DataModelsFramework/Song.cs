@@ -19,7 +19,7 @@ namespace DataModelsFramework
         public DateTime? SongReleaseDate { get; set; }
         public List<SongArtist> SongArtists { get; set; }
         public List<SongGenre> SongGenres { get; set; }
-        public List<SongAlbum> Albums { get; set; }
-        public List<SongPlaylist> Playlists { get; set; }
+        public List<SongAlbum> SongAlbums { get; set; }
+        public List<SongPlaylist> SongPlaylists { get; set; }
     }
 }

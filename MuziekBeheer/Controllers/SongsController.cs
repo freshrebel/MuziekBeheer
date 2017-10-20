@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DataLayerFramework;
+using DataModelsFramework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,10 +10,16 @@ namespace MuziekBeheer.Controllers
 {
     public class SongsController : Controller
     {
+
+        SongsDb songsDb = new SongsDb();
+
         // GET: Songs
         public ActionResult Index()
         {
-            return View();
+            var selectAllSongsQuery = from s in songsDb.Songs.Include("SongArtists.Artist").Include("SongAlbums.Album")
+                                      select s;
+            List<Song> songs = selectAllSongsQuery.ToList();
+            return View(songs);
         }
 
         // GET: Songs/Details/5
