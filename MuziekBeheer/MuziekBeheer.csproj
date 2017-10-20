@@ -331,6 +331,7 @@
     <Content Include="Views\Artists\AlreadyExisting.cshtml" />
     <Content Include="Views\Genres\Edit.cshtml" />
     <Content Include="Views\Songs\index.cshtml" />
+    <Content Include="Views\Songs\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

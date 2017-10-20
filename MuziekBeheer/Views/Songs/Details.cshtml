@@ -1,0 +1,82 @@
+﻿@model DataModelsFramework.Song
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Song</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SongName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SongName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Lenght)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lenght)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Bpm)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bpm)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Rating)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rating)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SongReleaseDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SongReleaseDate)
+        </dd>
+        <dt>
+            Artiesten
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ArtistsToString)
+        </dd>
+        <dt>
+            Albums
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AlbumsToString)
+        </dd>
+        <dt>
+            Genres
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.GenresToString)
+        </dd>
+        <dt>
+            Playlists
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PlaylistsToString)
+        </dd>
+    </dl>
+</div>
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.SongId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

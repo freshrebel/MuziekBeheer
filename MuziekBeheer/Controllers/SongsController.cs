@@ -25,7 +25,7 @@ namespace MuziekBeheer.Controllers
         // GET: Songs/Details/5
         public ActionResult Details(int id)
         {
-            var getSongByIdQuery = from s in songsDb.Songs.Include("SongAlbums.Albums")
+            var getSongByIdQuery = from s in songsDb.Songs.Include("SongAlbums.Album")
                                               .Include("SongPlaylists.Playlist")
                                               .Include("SongArtists.Artist")
                                               .Include("SongGenres.Genre")
