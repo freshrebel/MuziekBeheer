@@ -120,9 +120,17 @@ namespace MuziekBeheer.Controllers
         }
 
         [HttpPost]
-        public ActionResult AlreadyExisting(int Albumid)
+        public ActionResult AlreadyExisting(int Albumid, string submit)
         {
-            return RedirectToAction("Details", new { id = Albumid });
+            bool viewDetails = submit == "yes";
+            if (viewDetails)
+            {
+                return RedirectToAction("Details", new { id = Albumid });
+            }
+            else
+            {
+                return RedirectToAction("index");
+            }
         }
 
         protected override void Dispose(bool disposing)
