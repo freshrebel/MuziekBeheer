@@ -45,11 +45,11 @@ namespace MuziekBeheer.Controllers
         public ActionResult Create(Album album)
         {
 
-            var getAlbumByName = from a in songsDb.Albums
+            var getAlbumByNameQuery = from a in songsDb.Albums
                                     where a.AlbumName.ToLower().Trim() == album.AlbumName.ToLower().Trim()
                                     select a;
             
-            if (getAlbumByName.Count() == 0)
+            if (getAlbumByNameQuery.Count() == 0)
             {
                 songsDb.Albums.Add(album);
                 songsDb.SaveChanges();
@@ -57,7 +57,7 @@ namespace MuziekBeheer.Controllers
             }
             else
             {
-                List<Album> existingAlbums = getAlbumByName.ToList();
+                List<Album> existingAlbums = getAlbumByNameQuery.ToList();
                 return RedirectToAction("AlreadyExisting", existingAlbums[0]);
             }
         }
