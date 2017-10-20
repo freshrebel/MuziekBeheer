@@ -89,8 +89,9 @@ namespace MuziekBeheer.Controllers
         // GET: Albums/Delete/5
         public ActionResult Delete(int id)
         {
-            var album = songsDb.Albums.Find(id);
-            if (album == null)
+            Album album = songsDb.Albums.Find(id);
+            bool albumExists = album != null;
+            if (!albumExists)
             {
                 return View("NotFound");
             }

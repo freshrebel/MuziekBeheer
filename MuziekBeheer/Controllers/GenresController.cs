@@ -80,6 +80,12 @@ namespace MuziekBeheer.Controllers
         // GET: Genres/Delete/5
         public ActionResult Delete(int id)
         {
+            Genre genre = songsDb.Genres.Find(id);
+            bool genreExists = genre != null;
+            if (!genreExists)
+            {
+                return View("NotFound");
+            }
             return View();
         }
 
