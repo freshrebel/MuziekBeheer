@@ -103,9 +103,10 @@ namespace MuziekBeheer.Controllers
         public ActionResult Delete(int id, FormCollection collection)
         {
 
-            var album = songsDb.Albums.Find(id);
+            Album album = songsDb.Albums.Find(id);
 
-            if (album != null)
+            bool albumExists = album != null;
+            if (albumExists)
             {
                 songsDb.Albums.Remove(album);
                 songsDb.SaveChanges();

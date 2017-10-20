@@ -86,23 +86,23 @@ namespace MuziekBeheer.Controllers
             {
                 return View("NotFound");
             }
-            return View();
+            return View(genre);
         }
 
         // POST: Genres/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {
-            try
+            Genre genre = songsDb.Genres.Find(id);
+            bool genreExists = genre != null;
+            if (genreExists)
             {
-                // TODO: Add delete logic here
+                songsDb.Genres.Remove(genre);
+                songsDb.SaveChanges();
+                return RedirectToAction("index");
+            }
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            return View();
         }
 
         public ActionResult AlreadyExisting(Genre genre)
