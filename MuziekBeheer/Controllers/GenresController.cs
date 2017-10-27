@@ -10,15 +10,12 @@ namespace MuziekBeheer.Controllers
 {
     public class GenresController : Controller
     {
-
-        SongsDb songsDb = new SongsDb();
+        GenreDA genreDA = new GenreDA();
 
         // GET: Genres
         public ActionResult Index()
         {
-            var genres = songsDb.Genres;
-
-            return View(genres);
+            return View(genreDA.GetAllGenres());
         }
 
         // GET: Genres/Create
@@ -31,28 +28,24 @@ namespace MuziekBeheer.Controllers
         [HttpPost]
         public ActionResult Create(Genre genre)
         {
-            var getGenreByNameQuery = from g in songsDb.Genres
-                                      where g.GenreName.ToLower().Trim() == genre.GenreName.ToLower().Trim()
-                                      select g;
+            Genre existingGenre = genreDA.GetGenreByName(genre.GenreName);
 
-            bool genreExists = getGenreByNameQuery.Count() != 0;
+            bool genreExists = existingGenre.GenreId != 0;
             if (!genreExists)
             {
-                songsDb.Genres.Add(genre);
-                songsDb.SaveChanges();
+                genreDA.AddGenre(genre);
                 return RedirectToAction("index");
             }
             else
             {
-                List<Genre> existingGenres = getGenreByNameQuery.ToList();
-                return RedirectToAction("AlreadyExisting", existingGenres[0]);
+                return RedirectToAction("AlreadyExisting", existingGenre);
             }
         }
 
         // GET: Genres/Edit/5
         public ActionResult Edit(int id)
         {
-            Genre genre = songsDb.Genres.Find(id);
+            Genre genre = genreDA.GetGenreById(id);
             bool genreExists = genre != null;
             if (!genreExists)
             {
@@ -63,39 +56,33 @@ namespace MuziekBeheer.Controllers
 
         // POST: Genres/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(int id, Genre genre)
         {
-            Genre genre = songsDb.Genres.Find(id);
-            if (TryUpdateModel(genre))
-            {
-                songsDb.SaveChanges();
-                return RedirectToAction("index");
-            }
-            return View();
+            genreDA.EditGenre(genre);
+            return RedirectToAction("index");
         }
 
         // GET: Genres/Delete/5
         public ActionResult Delete(int id)
         {
-            Genre genre = songsDb.Genres.Find(id);
-            bool genreExists = genre != null;
+            Genre existingGenre = genreDA.GetGenreById(id);
+            bool genreExists = existingGenre.GenreId != 0;
             if (!genreExists)
             {
                 return View("NotFound");
             }
-            return View(genre);
+            return View(existingGenre);
         }
 
         // POST: Genres/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(int id, Genre genre)
         {
-            Genre genre = songsDb.Genres.Find(id);
-            bool genreExists = genre != null;
+            Genre existingGenre = genreDA.GetGenreById(id);
+            bool genreExists = existingGenre.GenreId != 0;
             if (genreExists)
             {
-                songsDb.Genres.Remove(genre);
-                songsDb.SaveChanges();
+                genreDA.DeleteGenre(existingGenre);
                 return RedirectToAction("index");
             }
 
@@ -109,7 +96,7 @@ namespace MuziekBeheer.Controllers
 
         protected override void Dispose(bool disposing)
         {
-            songsDb.Dispose();
+            genreDA.Dispose();
             base.Dispose(disposing);
         }
     }
