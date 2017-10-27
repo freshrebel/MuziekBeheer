@@ -116,7 +116,7 @@ namespace MuziekBeheer.Controllers
 
         protected override void Dispose(bool disposing)
         {
-            songsDb.Dispose();
+            artistDA.Dispose();
             base.Dispose(disposing);
         }
     }
