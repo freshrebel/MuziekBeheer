@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlbumDA.cs" />
     <Compile Include="Migrations\201710131517058_InitialCreate.cs" />
     <Compile Include="Migrations\201710131517058_InitialCreate.Designer.cs">
       <DependentUpon>201710131517058_InitialCreate.cs</DependentUpon>

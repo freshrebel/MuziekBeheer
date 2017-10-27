@@ -9,12 +9,12 @@ namespace MuziekBeheer.Controllers
     public class AlbumsController : Controller
     {
 
-        SongsDb songsDb = new SongsDb();
+        AlbumDA albumDA = new AlbumDA();
 
         // GET: Albums
         public ActionResult Index()
         {
-            var albums = songsDb.Albums;
+            List<Album> albums = albumDA.GetAllAlbums();
 
             return View(albums);
         }
@@ -22,10 +22,7 @@ namespace MuziekBeheer.Controllers
         // GET: Albums/Details/5
         public ActionResult Details(int id)
         {
-            var getAlbumByIdQuery = from a in songsDb.Albums.Include("SongAlbums.Song")
-                        where a.AlbumId == id
-                        select a;
-            Album album = getAlbumByIdQuery.ToList<Album>()[0];
+            Album album = albumDA.GetAlbumById(id);
             album.SongAlbums = album.SongAlbums.OrderBy(a => a.AlbumSequenceNumber).ToList();
             if (album == null)
             {
@@ -44,29 +41,26 @@ namespace MuziekBeheer.Controllers
         [HttpPost]
         public ActionResult Create(Album album)
         {
+            Album albumByName = albumDA.GetAlbumByName(album.AlbumName);
+            bool albumFound = albumByName.AlbumId != 0;
 
-            var getAlbumByNameQuery = from a in songsDb.Albums
-                                    where a.AlbumName.ToLower().Trim() == album.AlbumName.ToLower().Trim()
-                                    select a;
-            
-            if (getAlbumByNameQuery.Count() == 0)
+            if (!albumFound)
             {
-                songsDb.Albums.Add(album);
-                songsDb.SaveChanges();
-                return RedirectToAction("index"); 
+                albumDA.AddAlbum(album);
+                return RedirectToAction("index");
             }
             else
             {
-                List<Album> existingAlbums = getAlbumByNameQuery.ToList();
-                return RedirectToAction("AlreadyExisting", existingAlbums[0]);
+                return RedirectToAction("AlreadyExisting", albumByName);
             }
         }
 
         // GET: Albums/Edit/5
         public ActionResult Edit(int id)
         {
-            var album = songsDb.Albums.Find(id);
-            if (album == null)
+            Album album = albumDA.GetAlbumById(id);
+            bool albumFound = album.AlbumId != 0;
+            if (!albumFound)
             {
                 return View("NotFound");
             }
@@ -77,19 +71,15 @@ namespace MuziekBeheer.Controllers
         [HttpPost]
         public ActionResult Edit(int id, Album Album)
         {
-            Album album = songsDb.Albums.Find(id);
-            if (TryUpdateModel(album))
-            {
-                songsDb.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            return View();
+            Album album = albumDA.GetAlbumById(id);
+            albumDA.EditAlbum(album);
+            return RedirectToAction("Index");
         }
 
         // GET: Albums/Delete/5
         public ActionResult Delete(int id)
         {
-            Album album = songsDb.Albums.Find(id);
+            Album album = albumDA.GetAlbumById(id);
             bool albumExists = album != null;
             if (!albumExists)
             {
@@ -103,13 +93,12 @@ namespace MuziekBeheer.Controllers
         public ActionResult Delete(int id, FormCollection collection)
         {
 
-            Album album = songsDb.Albums.Find(id);
+            Album album = albumDA.GetAlbumById(id);
 
             bool albumExists = album != null;
             if (albumExists)
             {
-                songsDb.Albums.Remove(album);
-                songsDb.SaveChanges();
+                albumDA.DeleteAlbum(album);
                 return RedirectToAction("index");
             }
 
@@ -135,9 +124,11 @@ namespace MuziekBeheer.Controllers
             }
         }
 
+        // how to transfer this one?
+        //ToDo Delete property songsDb
         protected override void Dispose(bool disposing)
         {
-            songsDb.Dispose();
+            albumDA.Dispose();
             base.Dispose(disposing);
         }
     }

@@ -51,16 +51,10 @@ namespace MuziekBeheer.Controllers
         [HttpPost]
         public ActionResult Create(FormCollection collection)
         {
-            try
-            {
-                // TODO: Add insert logic here
+            //var getSongByNameQuery = from s in songsDb.Songs
+            //                         where s.SongName.ToLower().Trim() == 
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            return View();
         }
 
         // GET: Songs/Edit/5
