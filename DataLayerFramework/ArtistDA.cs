@@ -48,8 +48,20 @@ namespace DataLayerFramework
 
         public void EditArtist(Artist artist)
         {
-            songsDb.Entry(artist).State = System.Data.Entity.EntityState.Modified;
+            Artist originalArtist = songsDb.Artists.Find(artist.ArtistId);
+            songsDb.Entry(originalArtist).CurrentValues.SetValues(artist);
             songsDb.SaveChanges();
+        }
+
+        public void DeleteArtist(Artist artist)
+        {
+            songsDb.Artists.Remove(artist);
+            songsDb.SaveChanges();
+        }
+
+        public void Dispose()
+        {
+            songsDb.Dispose();
         }
     }
 }
