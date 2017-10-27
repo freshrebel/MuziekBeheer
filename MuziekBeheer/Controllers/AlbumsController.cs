@@ -72,7 +72,7 @@ namespace MuziekBeheer.Controllers
         public ActionResult Edit(int id, Album Album)
         {
             Album album = albumDA.GetAlbumById(id);
-            albumDA.EditAlbum(album);
+            albumDA.EditAlbum(Album);
             return RedirectToAction("Index");
         }
 

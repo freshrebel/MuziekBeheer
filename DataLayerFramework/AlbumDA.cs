@@ -49,7 +49,8 @@ namespace DataLayerFramework
 
         public void EditAlbum(Album album)
         {
-            songsDb.Entry(album).State = System.Data.Entity.EntityState.Modified;
+            Album originalAlbum = songsDb.Albums.Find(album.AlbumId);
+            songsDb.Entry(originalAlbum).CurrentValues.SetValues(album);
             songsDb.SaveChanges();
         }
 
