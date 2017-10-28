@@ -27,7 +27,16 @@ namespace DataLayerFramework
                                       where a.GenreName.ToLower().Trim() == name.ToLower().Trim()
                                       select a;
 
-            return getGenreByNameQuery.ToList<Genre>()[0];
+            bool genreFound = getGenreByNameQuery.Count() != 0;
+            if (genreFound)
+            {
+                return getGenreByNameQuery.ToList<Genre>()[0];
+            }
+            else
+            {
+                return new Genre();
+            }
+            
         }
 
         public void AddGenre(Genre genre)
