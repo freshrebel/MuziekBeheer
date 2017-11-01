@@ -55,6 +55,7 @@
       <DependentUpon>201710131517058_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="PlaylistDA.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SongsDA.cs" />
     <Compile Include="SongsDb.cs" />
