@@ -67,8 +67,18 @@ namespace MuziekBeheer.Controllers
         [HttpPost]
         public ActionResult Edit(int id, Artist artist)
         {
-            artistDA.EditArtist(artist);
-            return RedirectToAction("index");
+            Artist artistByName = artistDA.GetArtistByName(artist.ArtistName);
+            bool artistFound = artistByName.ArtistId != 0;
+
+            if (!artistFound)
+            {
+                artistDA.EditArtist(artist);
+                return RedirectToAction("index");
+            }
+            else
+            {
+                return RedirectToAction("AlreadyExisting", artistByName);
+            }
         }
 
         // GET: Artist/Delete/5

@@ -332,6 +332,11 @@
     <Content Include="Views\Genres\Edit.cshtml" />
     <Content Include="Views\Songs\index.cshtml" />
     <Content Include="Views\Songs\Details.cshtml" />
+    <Content Include="Views\Songs\Edit.cshtml" />
+    <Content Include="Views\Songs\Create.cshtml" />
+    <Content Include="Views\Songs\Delete.cshtml" />
+    <Content Include="Views\Songs\AlreadyExisting.cshtml" />
+    <Content Include="Views\Songs\NotFound.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -11,29 +11,20 @@ namespace MuziekBeheer.Controllers
     public class SongsController : Controller
     {
 
-        SongsDb songsDb = new SongsDb();
+        SongsDA songsDA = new SongsDA();
 
         // GET: Songs
         public ActionResult Index()
         {
-            var selectAllSongsQuery = from s in songsDb.Songs.Include("SongArtists.Artist").Include("SongAlbums.Album")
-                                      select s;
-            List<Song> songs = selectAllSongsQuery.ToList();
-            return View(songs);
+            return View(songsDA.GetAllSongs());
         }
 
         // GET: Songs/Details/5
         public ActionResult Details(int id)
         {
-            var getSongByIdQuery = from s in songsDb.Songs.Include("SongAlbums.Album")
-                                              .Include("SongPlaylists.Playlist")
-                                              .Include("SongArtists.Artist")
-                                              .Include("SongGenres.Genre")
-                        where s.SongId == id
-                        select s;
-            Song song = getSongByIdQuery.ToList()[0];
+            Song song = songsDA.GetSongById(id);
 
-            bool songExists = song != null;
+            bool songExists = song.SongId != 0;
             if (!songExists)
             {
                 return View("NotFound");
@@ -49,56 +40,108 @@ namespace MuziekBeheer.Controllers
 
         // POST: Songs/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(Song song)
         {
-            //var getSongByNameQuery = from s in songsDb.Songs
-            //                         where s.SongName.ToLower().Trim() == 
+            Song originalSong = songsDA.getSongByName(song.SongName);
 
-            return View();
+            bool songFound = originalSong.SongId != 0;
+
+            if (songFound)
+            {
+                return RedirectToAction("AlreadyExisting", originalSong);
+            }
+            else
+            {
+                songsDA.AddSong(song);
+                return RedirectToAction("index");
+            }
         }
 
         // GET: Songs/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            Song song = songsDA.GetSongById(id);
+
+            bool songExists = song.SongId != 0;
+
+            if (songExists)
+            {
+                return View(song);
+            }
+            else
+            {
+                return View("NotFound");
+            }
         }
 
         // POST: Songs/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(int id, Song song)
         {
-            try
-            {
-                // TODO: Add update logic here
+            Song originalSong = songsDA.getSongByName(song.SongName);
 
-                return RedirectToAction("Index");
-            }
-            catch
+            bool songFound = originalSong.SongId != 0;
+
+            if (songFound)
             {
-                return View();
+                return RedirectToAction("AlreadyExisting", originalSong);
+            }
+            else
+            {
+                songsDA.EditSong(song);
+                return RedirectToAction("Details", id);
             }
         }
 
         // GET: Songs/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            Song song = songsDA.GetSongById(id);
+
+            bool songExists = song.SongId != 0;
+
+            if (songExists)
+            {
+                return View(song);
+            }
+            else
+            {
+                return View("NotFound");
+            }
         }
 
         // POST: Songs/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {
-            try
-            {
-                // TODO: Add delete logic here
+            Song song = songsDA.GetSongById(id);
+            songsDA.DeleteSong(song);
+            return RedirectToAction("index");
+        }
 
-                return RedirectToAction("Index");
-            }
-            catch
+        public ActionResult AlreadyExisting(Song song)
+        {
+            return View("AlreadyExisting");
+        }
+
+        [HttpPost]
+        public ActionResult AlreadyExisting(int Albumid, string submit)
+        {
+            bool viewDetails = submit == "yes";
+            if (viewDetails)
             {
-                return View();
+                return RedirectToAction("Details", new { id = Albumid });
             }
+            else
+            {
+                return RedirectToAction("index");
+            }
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            songsDA.Dispose();
+            base.Dispose(disposing);
         }
     }
 }

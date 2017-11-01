@@ -22,7 +22,16 @@ namespace DataLayerFramework
             var getAlbumByIdQuery = from a in songsDb.Albums.Include("SongAlbums.Song")
                                     where a.AlbumId == id
                                     select a;
-            return getAlbumByIdQuery.ToList<Album>()[0];
+
+            bool albumFound = getAlbumByIdQuery.Count() != 0;
+            if (albumFound)
+            {
+                return getAlbumByIdQuery.ToList<Album>()[0];
+            }
+            else
+            {
+                return new Album();
+            }
         }
 
         public Album GetAlbumByName(string name)

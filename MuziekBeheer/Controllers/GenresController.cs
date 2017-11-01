@@ -58,8 +58,18 @@ namespace MuziekBeheer.Controllers
         [HttpPost]
         public ActionResult Edit(int id, Genre genre)
         {
-            genreDA.EditGenre(genre);
-            return RedirectToAction("index");
+            Genre existingGenre = genreDA.GetGenreByName(genre.GenreName);
+
+            bool genreExists = existingGenre.GenreId != 0;
+            if (!genreExists)
+            {
+                genreDA.EditGenre(genre);
+                return RedirectToAction("index");
+            }
+            else
+            {
+                return RedirectToAction("AlreadyExisting", existingGenre);
+            }
         }
 
         // GET: Genres/Delete/5

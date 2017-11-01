@@ -21,7 +21,15 @@ namespace DataLayerFramework
             var getArtistByIdQuery = from a in songsDb.Artists.Include("SongArtists.Song")
                                      where a.ArtistId == id
                                      select a;
-            return getArtistByIdQuery.ToList<Artist>()[0];
+            bool artistFound = getArtistByIdQuery.Count() != 0;
+            if (artistFound)
+            {
+                return getArtistByIdQuery.ToList<Artist>()[0];
+            }
+            else
+            {
+                return new Artist();
+            }
         }
 
         public Artist GetArtistByName(string name)

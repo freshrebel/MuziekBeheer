@@ -18,7 +18,16 @@ namespace DataLayerFramework
 
         public Genre GetGenreById(int id)
         {
-            return songsDb.Genres.Find(id);
+            Genre GenreById = songsDb.Genres.Find(id);
+            bool genreFound = GenreById != null;
+            if (genreFound)
+            {
+                return GenreById;
+            }
+            else
+            {
+                return new Genre();
+            }
         }
 
         public Genre GetGenreByName(string name)
