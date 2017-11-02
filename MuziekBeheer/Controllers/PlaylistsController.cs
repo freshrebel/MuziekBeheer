@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DataLayerFramework;
+using DataModelsFramework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,16 +10,27 @@ namespace MuziekBeheer.Controllers
 {
     public class PlaylistsController : Controller
     {
+
+        PlaylistDA playlistDA = new PlaylistDA();
+
         // GET: Playlists
         public ActionResult Index()
         {
-            return View();
+            List<Playlist> playlists = playlistDA.GetAllPlaylists();
+            return View(playlists);
         }
 
         // GET: Playlists/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            Playlist playlist = playlistDA.GetPlaylistById(id);
+
+            bool playlistFound = playlist.PlaylistId != 0;
+            if (!playlistFound)
+            {
+                return View("NotFound");
+            }
+            return View(playlist);
         }
 
         // GET: Playlists/Create
@@ -28,62 +41,98 @@ namespace MuziekBeheer.Controllers
 
         // POST: Playlists/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(Playlist newPlaylist)
         {
-            try
-            {
-                // TODO: Add insert logic here
+            Playlist existingPlaylist = playlistDA.GetPlaylistByName(newPlaylist.PlaylistName);
 
-                return RedirectToAction("Index");
-            }
-            catch
+            bool playlistExists = existingPlaylist.PlaylistId != 0;
+            if (playlistExists)
             {
-                return View();
+                return RedirectToAction("AlreadyExisting", existingPlaylist);
+            }
+            else
+            {
+                playlistDA.AddPlaylist(newPlaylist);
+                return RedirectToAction("index");
             }
         }
 
         // GET: Playlists/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            Playlist playlist = playlistDA.GetPlaylistById(id);
+            bool playlistFound = playlist.PlaylistId != 0;
+
+            if (!playlistFound)
+            {
+                return View("NotFound");
+            }
+            return View(playlist);
         }
 
         // POST: Playlists/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(int id, Playlist playlist)
         {
-            try
-            {
-                // TODO: Add update logic here
+            Playlist existingPlaylist = playlistDA.GetPlaylistByName(playlist.PlaylistName);
+            bool playlistExists = existingPlaylist.PlaylistId != 0;
 
-                return RedirectToAction("Index");
-            }
-            catch
+            if (playlistExists)
             {
-                return View();
+                return RedirectToAction("AlreadyExisting", existingPlaylist);
+            }
+            else
+            {
+                playlistDA.EditPlaylist(playlist);
+                return RedirectToAction("index");
             }
         }
 
         // GET: Playlists/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            Playlist playlist = playlistDA.GetPlaylistById(id);
+
+            bool playlistFound = playlist.PlaylistId != 0;
+            if (!playlistFound)
+            {
+                return View("NotFound");
+            }
+            return View(playlist);
         }
 
         // POST: Playlists/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {
-            try
-            {
-                // TODO: Add delete logic here
+            Playlist existingPlaylist = playlistDA.GetPlaylistById(id);
+            playlistDA.DeletePlaylist(existingPlaylist);
+            return RedirectToAction("index");
+        }
 
-                return RedirectToAction("Index");
-            }
-            catch
+        public ActionResult AlreadyExisting(Playlist playlist)
+        {
+            return View("AlreadyExisting");
+        }
+
+        [HttpPost]
+        public ActionResult AlreadyExisting(int PlaylistId, string submit)
+        {
+            bool viewDetails = submit == "yes";
+            if (viewDetails)
             {
-                return View();
+                return RedirectToAction("Details", new { id = PlaylistId });
             }
+            else
+            {
+                return RedirectToAction("index");
+            }
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            playlistDA.Dispose();
+            base.Dispose(disposing);
         }
     }
 }

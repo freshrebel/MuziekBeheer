@@ -35,7 +35,7 @@ namespace DataLayerFramework
             return getSongByIdQuery.ToList()[0];
         }
 
-        public Song getSongByName(string name)
+        public Song GetSongByName(string name)
         {
             var getSongByNameQuery = from s in songsDb.Songs.Include("SongAlbums.Album")
                                               .Include("SongPlaylists.Playlist")

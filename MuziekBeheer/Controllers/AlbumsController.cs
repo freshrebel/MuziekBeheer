@@ -24,7 +24,7 @@ namespace MuziekBeheer.Controllers
         {
             Album album = albumDA.GetAlbumById(id);
             album.SongAlbums = album.SongAlbums.OrderBy(a => a.AlbumSequenceNumber).ToList();
-            if (album == null)
+            if (album.AlbumId == 0)
             {
                 return View("NotFound");
             }
@@ -69,18 +69,26 @@ namespace MuziekBeheer.Controllers
 
         // POST: Albums/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, Album Album)
+        public ActionResult Edit(int id, Album album)
         {
-            Album album = albumDA.GetAlbumById(id);
-            albumDA.EditAlbum(Album);
-            return RedirectToAction("Index");
+            Album existingAlbum = albumDA.GetAlbumByName(album.AlbumName);
+            bool albumExists = existingAlbum.AlbumId != 0;
+            if (albumExists)
+            {
+                return RedirectToAction("AlreadyExisting", existingAlbum.AlbumId);
+            }
+            else
+            {
+                albumDA.EditAlbum(album);
+                return RedirectToAction("Index");
+            }            
         }
 
         // GET: Albums/Delete/5
         public ActionResult Delete(int id)
         {
             Album album = albumDA.GetAlbumById(id);
-            bool albumExists = album != null;
+            bool albumExists = album.AlbumId != 0;
             if (!albumExists)
             {
                 return View("NotFound");
@@ -124,8 +132,6 @@ namespace MuziekBeheer.Controllers
             }
         }
 
-        // how to transfer this one?
-        //ToDo Delete property songsDb
         protected override void Dispose(bool disposing)
         {
             albumDA.Dispose();

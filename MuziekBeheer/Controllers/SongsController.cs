@@ -42,7 +42,7 @@ namespace MuziekBeheer.Controllers
         [HttpPost]
         public ActionResult Create(Song song)
         {
-            Song originalSong = songsDA.getSongByName(song.SongName);
+            Song originalSong = songsDA.GetSongByName(song.SongName);
 
             bool songFound = originalSong.SongId != 0;
 
@@ -78,7 +78,7 @@ namespace MuziekBeheer.Controllers
         [HttpPost]
         public ActionResult Edit(int id, Song song)
         {
-            Song originalSong = songsDA.getSongByName(song.SongName);
+            Song originalSong = songsDA.GetSongByName(song.SongName);
 
             bool songFound = originalSong.SongId != 0;
 
