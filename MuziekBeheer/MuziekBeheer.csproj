@@ -338,10 +338,16 @@
     <Content Include="Views\Songs\Delete.cshtml" />
     <Content Include="Views\Songs\AlreadyExisting.cshtml" />
     <Content Include="Views\Songs\NotFound.cshtml" />
+    <Content Include="Views\Playlists\AlreadyExisting.cshtml" />
+    <Content Include="Views\Playlists\Create.cshtml" />
+    <Content Include="Views\Playlists\Delete.cshtml" />
+    <Content Include="Views\Playlists\Details.cshtml" />
+    <Content Include="Views\Playlists\Edit.cshtml" />
+    <Content Include="Views\Playlists\Index.cshtml" />
+    <Content Include="Views\Playlists\NotFound.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Playlists\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

@@ -1,0 +1,16 @@
+﻿@model Playlist
+@{
+    ViewBag.Title = "AlreadyExisting";
+}
+
+<h2>Deze playlist bestaat al.</h2>
+
+@using (Html.BeginForm())
+{
+    <div class="form-horizontal">
+        @Html.HiddenFor(model => model.PlaylistId)
+        <text>wilt u deze playlist bekijken?</text>
+        <input type="submit" name="submit" value="yes" class="btn btn-default" />
+        <input type="submit" name="submit" value="no" class="btn btn-default" />
+    </div>
+}
