@@ -7,12 +7,12 @@
 <h2>Albums</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Maak nieuw", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.AlbumName)
+            @Html.DisplayName("Naam")
         </th>
         <th></th>
     </tr>
@@ -23,9 +23,9 @@
             @Html.DisplayFor(modelItem => item.AlbumName)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.AlbumId }) |
+            @Html.ActionLink("Bewerk", "Edit", new { id=item.AlbumId }) |
             @Html.ActionLink("Details", "Details", new { id=item.AlbumId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.AlbumId })
+            @Html.ActionLink("Verwijder", "Delete", new { id=item.AlbumId })
         </td>
     </tr>
 }

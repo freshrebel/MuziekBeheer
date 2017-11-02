@@ -40,7 +40,7 @@ namespace MuziekBeheer.Controllers
 
         // POST: Songs/Create
         [HttpPost]
-        public ActionResult Create(Song song)
+        public ActionResult Create(Song song, string Time)
         {
             Song originalSong = songsDA.GetSongByName(song.SongName);
 
@@ -79,6 +79,9 @@ namespace MuziekBeheer.Controllers
         public ActionResult Edit(int id, Song song)
         {
             Song originalSong = songsDA.GetSongByName(song.SongName);
+
+            TimeSpan newLength = new TimeSpan(0, song.Lenght.Value.Hours, song.Lenght.Value.Minutes);
+            song.Lenght = newLength;
 
             bool songFound = originalSong.SongId != 0;
 

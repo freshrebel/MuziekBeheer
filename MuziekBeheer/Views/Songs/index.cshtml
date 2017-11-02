@@ -4,15 +4,15 @@
     ViewBag.Title = "index";
 }
 
-<h2>index</h2>
+<h2>Songs</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Maak nieuw", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.SongName)
+            Song naam
         </th>
         <th>
             Artiesten
@@ -30,9 +30,9 @@
                 @Html.DisplayFor(modelItem => song.ArtistsToString)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = song.SongId }) |
+                @Html.ActionLink("Bewerk", "Edit", new { id = song.SongId }) |
                 @Html.ActionLink("Details", "Details", new { id = song.SongId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = song.SongId })
+                @Html.ActionLink("Verwijder", "Delete", new { id = song.SongId })
             </td>
         </tr>
     }

@@ -9,7 +9,7 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.AlbumReleaseDate)
+            @Html.DisplayName("Release datum")
         </dt>
 
         <dd>
@@ -29,6 +29,6 @@
     <br />
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.AlbumId }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Bewerk", "Edit", new { id = Model.AlbumId }) |
+    @Html.ActionLink("Terug naar de lijst", "Index")
 </p>

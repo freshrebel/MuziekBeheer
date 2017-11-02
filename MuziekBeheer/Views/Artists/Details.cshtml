@@ -7,11 +7,11 @@
 <h2>Details</h2>
 
 <div>
-    <h4>Artist</h4>
+    <h4>Artiest</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.ArtistName)
+            @Html.DisplayName("Naam")
         </dt>
 
         <dd>
@@ -19,7 +19,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.BornAt)
+            @Html.DisplayName("Geboren in")
         </dt>
 
         <dd>
@@ -27,7 +27,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.BornOn)
+            @Html.DisplayName("Geboren op")
         </dt>
 
         <dd>
@@ -35,7 +35,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Nationality)
+            @Html.DisplayName("Nationaliteit")
         </dt>
 
         <dd>
@@ -57,6 +57,6 @@
     </div>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ArtistId }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Bewerk", "Edit", new { id = Model.ArtistId }) |
+    @Html.ActionLink("Terug naar de lijst", "Index")
 </p>

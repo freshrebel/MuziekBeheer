@@ -7,12 +7,12 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Maak nieuw", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.PlaylistName)
+            @Html.DisplayName("Naam")
         </th>
         <th></th>
     </tr>
@@ -23,9 +23,9 @@
             @Html.DisplayFor(modelItem => item.PlaylistName)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.PlaylistId }) |
+            @Html.ActionLink("Bewerk", "Edit", new { id=item.PlaylistId }) |
             @Html.ActionLink("Details", "Details", new { id=item.PlaylistId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.PlaylistId })
+            @Html.ActionLink("Verwijder", "Delete", new { id=item.PlaylistId })
         </td>
     </tr>
 }

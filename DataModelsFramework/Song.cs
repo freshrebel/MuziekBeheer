@@ -11,8 +11,10 @@ namespace DataModelsFramework
     {
         public int SongId { get; set; }
         public string SongName { get; set; }
+        [DisplayFormat(DataFormatString = "{0:hh\\:mm\\:ss}", ApplyFormatInEditMode = true)]
         public TimeSpan? Lenght { get; set; }
         public int? Bpm { get; set; }
+        [Range(0, 5)]
         public int? Rating { get; set; }
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
