@@ -77,6 +77,8 @@
 </div>
 
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.SongId }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Bewerk", "Edit", new { id = Model.SongId }) |
+    @Html.ActionLink("Voeg artiest toe", "AddArtist", new { id = Model.SongId }) |
+    @Html.ActionLink("Voeg genre toe", "AddGenre", new { id = Model.SongId }) |
+    @Html.ActionLink("Terug naar de lijst", "Index")
 </p>

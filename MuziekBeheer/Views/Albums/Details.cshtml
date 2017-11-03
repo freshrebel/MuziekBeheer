@@ -20,14 +20,17 @@
 </div>
 <div>
     <h5><u><b>Songs</b></u></h5>
+    @Html.ActionLink("Voeg songs toe", "AddSong", new { id = Model.AlbumId })
+    <br />
     @foreach (var song in Model.SongAlbums)
     {
         @song.AlbumSequenceNumber.ToString() <text>&nbsp;</text>
-        @song.Song.SongName.ToString()
+        @song.Song.SongName.ToString() @Html.ActionLink("Verwijder van album", "DeleteSong", new { songId = song.SongId, albumId = song.AlbumId})
         <br />
     }
     <br />
 </div>
+<br/>
 <p>
     @Html.ActionLink("Bewerk", "Edit", new { id = Model.AlbumId }) |
     @Html.ActionLink("Terug naar de lijst", "Index")

@@ -57,6 +57,9 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PlaylistDA.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SongAlbumDA.cs" />
+    <Compile Include="SongArtistDA.cs" />
+    <Compile Include="SongPlaylistDA.cs" />
     <Compile Include="SongsDA.cs" />
     <Compile Include="SongsDb.cs" />
   </ItemGroup>

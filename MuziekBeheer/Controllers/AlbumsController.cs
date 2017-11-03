@@ -3,6 +3,7 @@ using DataModelsFramework;
 using System.Web.Mvc;
 using System.Linq;
 using System.Collections.Generic;
+using System.Dynamic;
 
 namespace MuziekBeheer.Controllers
 {
@@ -130,6 +131,29 @@ namespace MuziekBeheer.Controllers
             {
                 return RedirectToAction("index");
             }
+        }
+
+        public ActionResult AddSong(int id)
+        {
+            Album album = albumDA.GetAlbumById(id);
+            List<Song> songsNotInAlbum = albumDA.GetSongsNotInAlbum(id);
+            dynamic albumAndSongs = new ExpandoObject();
+            albumAndSongs.Album = album;
+            albumAndSongs.Songs = songsNotInAlbum;
+            return View(albumAndSongs);
+        }
+
+        [HttpPost]
+        public ActionResult AddSong(int SongId, int AlbumId)
+        {
+            albumDA.AddSong(SongId, AlbumId);
+            return RedirectToAction("AddSong");
+        }
+
+        public ActionResult DeleteSong(int songId, int albumId)
+        {
+            albumDA.DeleteSong(songId, albumId);
+            return RedirectToAction("Details", new { id = albumId });
         }
 
         protected override void Dispose(bool disposing)

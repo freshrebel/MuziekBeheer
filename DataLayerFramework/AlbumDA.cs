@@ -11,6 +11,7 @@ namespace DataLayerFramework
     {
 
         SongsDb songsDb = new SongsDb();
+        SongAlbumDA songAlbumDA = new SongAlbumDA();
 
         public List<Album> GetAllAlbums()
         {
@@ -65,8 +66,39 @@ namespace DataLayerFramework
 
         public void DeleteAlbum(Album album)
         {
+            songAlbumDA.DeleteAlbum(album.AlbumId, songsDb);
             songsDb.Albums.Remove(album);
             songsDb.SaveChanges();
+        }
+
+        public List<Song> GetSongsNotInAlbum(int albumId)
+        {
+            List<Song> allSongs = songsDb.Songs.Include("SongAlbums").Include("SongArtists.Artist").ToList();
+            List<Song> songsNotInAlbum = new List<Song>();
+            foreach (Song s in allSongs)
+            {
+                var songAlbumWithAlbum = from sa in s.SongAlbums
+                                         where sa.AlbumId == albumId
+                                         select sa;
+                bool songInAlbum = songAlbumWithAlbum.Count() != 0;
+                if (!songInAlbum)
+                {
+                    songsNotInAlbum.Add(s);
+                }
+
+            }
+
+            return songsNotInAlbum;
+        }
+
+        public void AddSong(int songId, int albumId)
+        {
+            songAlbumDA.AddSongToAlbum(songId, albumId, songsDb);
+        }
+
+        public void DeleteSong(int songId, int albumId)
+        {
+            songAlbumDA.DeleteSongFromAlbum(songId, albumId, songsDb);
         }
 
         public void Dispose()

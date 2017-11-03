@@ -341,6 +341,9 @@
     <Content Include="Views\Playlists\Edit.cshtml" />
     <Content Include="Views\Playlists\Index.cshtml" />
     <Content Include="Views\Playlists\NotFound.cshtml" />
+    <Content Include="Views\Albums\AddSong.cshtml" />
+    <Content Include="Views\Playlists\AddSong.cshtml" />
+    <Content Include="Views\Songs\AddArtist.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

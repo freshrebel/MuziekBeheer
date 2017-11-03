@@ -1,0 +1,42 @@
+﻿@model dynamic
+@{
+    ViewBag.Title = "AddSong";
+}
+
+<h2>AddSong</h2>
+<h4>@Model.Album.AlbumName</h4>
+
+<table class="table">
+    <tr>
+        <th>Naam</th>
+        <th>Artiesten</th>
+        <th></th>
+    </tr>
+    @foreach (Song s in Model.Songs)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => s.SongName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => s.ArtistsToString)
+            </td>
+            <td>
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-actions no-color">
+                        <input type="hidden" name="SongId" value="@s.SongId" />
+                        <input type="hidden" name="AlbumId" value="@Model.Album.AlbumId" />
+                        <input type="submit" value="Toevoegen" class="btn btn-default" />
+                    </div>
+                }
+            </td>
+        </tr>
+    }
+</table>
+
+@Html.ActionLink("Terug naar album", "Details", new { id = Model.Album.AlbumId })
+
+

@@ -2,6 +2,7 @@
 using DataModelsFramework;
 using System;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -127,6 +128,29 @@ namespace MuziekBeheer.Controllers
             {
                 return RedirectToAction("index");
             }
+        }
+
+        public ActionResult AddSong(int id)
+        {
+            Playlist playlist = playlistDA.GetPlaylistById(id);
+            List<Song> songsNotInPlaylist = playlistDA.GetSongsNotInPlaylist(id);
+            dynamic playlistAndSongs = new ExpandoObject();
+            playlistAndSongs.Playlist = playlist;
+            playlistAndSongs.Songs = songsNotInPlaylist;
+            return View(playlistAndSongs);
+        }
+
+        [HttpPost]
+        public ActionResult AddSong(int SongId, int PlaylistId)
+        {
+            playlistDA.AddSong(SongId, PlaylistId);
+            return RedirectToAction("AddSong");
+        }
+
+        public ActionResult DeleteSong(int songId, int playlistId)
+        {
+            playlistDA.DeleteSong(songId, playlistId);
+            return RedirectToAction("Details", new { id = playlistId });
         }
 
         protected override void Dispose(bool disposing)

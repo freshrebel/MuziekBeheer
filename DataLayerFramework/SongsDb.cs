@@ -11,6 +11,10 @@ namespace DataLayerFramework
 {
     public class SongsDb : DbContext
     {
+        public SongsDb()
+        {
+            this.Database.Connection.ConnectionString = "data source =.; Database = SongsDb; integrated security = true;";
+        }
         public DbSet<Song> Songs { get; set; }
         public DbSet<Album> Albums { get; set; }
         public DbSet<Artist> Artists { get; set; }

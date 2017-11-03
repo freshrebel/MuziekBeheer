@@ -20,6 +20,18 @@
 
     </dl>
 </div>
+<div>
+    <h5><u><b>Songs</b></u></h5>
+    @Html.ActionLink("Voeg songs toe", "AddSong", new { id = Model.PlaylistId })
+    <br />
+    @foreach (var song in Model.SongPlaylists)
+    {
+        @song.Song.SongName.ToString() @Html.ActionLink("Verwijder van playlist", "DeleteSong", new { songId = song.SongId, playlistId = song.PlaylistId })
+        <br />
+    }
+    <br />
+</div>
+<br />
 <p>
     @Html.ActionLink("Bewerk", "Edit", new { id = Model.PlaylistId }) |
     @Html.ActionLink("Terug naar de lijst", "Index")
