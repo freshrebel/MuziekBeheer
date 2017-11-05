@@ -1,0 +1,36 @@
+﻿@model dynamic
+@{
+    ViewBag.Title = "ManageGenres";
+}
+
+<h2>Beheer Genres van @Model.Song.SongName</h2>
+
+<div>
+    <h5><u><b>Huidige genres</b></u></h5>
+    @foreach (SongGenre sg in Model.CurrentSongGenres)
+    {
+        @sg.Genre.GenreName <text>&nbsp;</text>
+        @Html.ActionLink("Verwijder van song", "DeleteGenre", new { songId = sg.SongId, genreId = sg.GenreId })
+        <br />
+    }
+</div>
+
+<h5><u><b>Toevoegen</b></u></h5>
+<table class="table">
+    <tr>
+        <th>Naam</th>
+        <th></th>
+    </tr>
+    @foreach (Genre g in Model.Genres)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => g.GenreName)
+            </td>
+            <td>
+                @Html.ActionLink("Toevoegen", "AddGenre", new { songId = Model.Song.SongId, genreId = g.GenreId })
+            </td>
+        </tr>
+    }
+</table>
+

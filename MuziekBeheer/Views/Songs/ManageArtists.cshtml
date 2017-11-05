@@ -1,0 +1,36 @@
+﻿@model dynamic
+@{
+    ViewBag.Title = "ManageArtists";
+}
+
+<h2>Beheer Artiesten van @Model.Song.SongName</h2>
+
+<div>
+    <h5><u><b>Huidige artiesten</b></u></h5>
+    @foreach (SongArtist sa in Model.CurrentSongArtists)
+    {
+        @sa.Artist.ArtistName <text>&nbsp;</text>
+        @Html.ActionLink("Verwijder van song", "DeleteArtist", new { songId = sa.SongId, artistId = sa.ArtistId })
+        <br />
+    }
+</div>
+
+<h5><u><b>Toevoegen</b></u></h5>
+<table class="table">
+    <tr>
+        <th>Naam</th>
+        <th></th>
+    </tr>
+    @foreach (Artist a in Model.Artists)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => a.ArtistName)
+            </td>
+            <td>
+                @Html.ActionLink("Toevoegen", "AddArtist", new { songId = Model.Song.SongId, artistId = a.ArtistId })
+            </td>
+        </tr>
+    }
+</table>
+

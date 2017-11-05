@@ -15,6 +15,8 @@ namespace DataLayerFramework
 
         public List<Album> GetAllAlbums()
         {
+            var query = songsDb.Albums.SqlQuery("spGetAllAlbums");
+            List<Album> albums = query.ToList();
             return songsDb.Albums.ToList<Album>();
         }
 

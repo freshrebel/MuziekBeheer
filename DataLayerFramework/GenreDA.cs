@@ -13,7 +13,9 @@ namespace DataLayerFramework
 
         public List<Genre> GetAllGenres()
         {
-            return songsDb.Genres.ToList<Genre>();
+            var query = songsDb.Genres.SqlQuery("Select * from Genres");
+            List<Genre> genres = query.ToList();
+            return genres;
         }
 
         public Genre GetGenreById(int id)
