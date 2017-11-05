@@ -10,6 +10,7 @@ namespace DataLayerFramework
     public class ArtistDA
     {
         SongsDb songsDb = new SongsDb();
+        SongArtistDA songArtistDA = new SongArtistDA();
 
         public List<Artist> GetAllArtists()
         {
@@ -63,6 +64,7 @@ namespace DataLayerFramework
 
         public void DeleteArtist(Artist artist)
         {
+            songArtistDA.DeleteArtist(artist.ArtistId, songsDb);
             songsDb.Artists.Remove(artist);
             songsDb.SaveChanges();
         }

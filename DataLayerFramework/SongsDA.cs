@@ -71,9 +71,9 @@ namespace DataLayerFramework
         public void DeleteSong(Song song)
         {
             songAlbumDA.DeleteSong(song.SongId, songsDb);
-            //delete songGenres
-            //delete songPlaylists
-            //delete songArtist
+            songGenreDA.DeleteSong(song.SongId, songsDb);
+            songPlaylistDA.DeleteSong(song.SongId, songsDb);
+            songArtistDA.DeleteSong(song.SongId, songsDb);
             songsDb.Songs.Remove(song);
             songsDb.SaveChanges();
         }

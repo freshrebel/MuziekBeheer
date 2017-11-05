@@ -43,19 +43,19 @@ namespace MuziekBeheer.Controllers
         [HttpPost]
         public ActionResult Create(Song song, string Time)
         {
-            Song originalSong = songsDA.GetSongByName(song.SongName);
+            //Song originalSong = songsDA.GetSongByName(song.SongName);
 
-            bool songFound = originalSong.SongId != 0;
+            //bool songFound = originalSong.SongId != 0;
 
-            if (songFound)
-            {
-                return RedirectToAction("AlreadyExisting", originalSong);
-            }
-            else
-            {
+            //if (songFound)
+            //{
+            //    return RedirectToAction("AlreadyExisting", originalSong);
+            //}
+            //else
+            //{
                 songsDA.AddSong(song);
                 return RedirectToAction("index");
-            }
+            //}
         }
 
         // GET: Songs/Edit/5
@@ -129,12 +129,12 @@ namespace MuziekBeheer.Controllers
         }
 
         [HttpPost]
-        public ActionResult AlreadyExisting(int Albumid, string submit)
+        public ActionResult AlreadyExisting(int SongId, string submit)
         {
             bool viewDetails = submit == "yes";
             if (viewDetails)
             {
-                return RedirectToAction("Details", new { id = Albumid });
+                return RedirectToAction("Details", new { id = SongId });
             }
             else
             {

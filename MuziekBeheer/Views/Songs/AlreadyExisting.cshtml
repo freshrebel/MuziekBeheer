@@ -5,10 +5,12 @@
 
 <h2>Deze song bestaat al</h2>
 
+@using (Html.BeginForm())
+{
 <div class="form-horizontal">
     @Html.HiddenFor(model => model.SongId)
     <text>wilt u deze song bekijken?</text>
     <input type="submit" name="submit" value="yes" class="btn btn-default" />
     <input type="submit" name="submit" value="no" class="btn btn-default" />
 </div>
-
+}

@@ -26,5 +26,31 @@ namespace DataLayerFramework
             songsDb.SongGenres.Add(songGenre);
             songsDb.SaveChanges();
         }
+
+        public void DeleteSong(int songId, SongsDb songsDb)
+        {
+            var songGenreQuery = from s in songsDb.SongGenres
+                                 where s.SongId == songId
+                                 select s;
+            List<SongGenre> toDelete = songGenreQuery.ToList();
+            foreach (SongGenre s in songGenreQuery)
+            {
+                songsDb.SongGenres.Remove(s);
+            }
+            songsDb.SaveChanges();
+        }
+
+        public void DeleteGenre(int genreId, SongsDb songsDb)
+        {
+            var songGenreQuery = from s in songsDb.SongGenres
+                                 where s.GenreId == genreId
+                                 select s;
+            List<SongGenre> toDelete = songGenreQuery.ToList();
+            foreach (SongGenre s in songGenreQuery)
+            {
+                songsDb.SongGenres.Remove(s);
+            }
+            songsDb.SaveChanges();
+        }
     }
 }

@@ -10,6 +10,7 @@ namespace DataLayerFramework
     public class GenreDA
     {
         SongsDb songsDb = new SongsDb();
+        SongGenreDA songGenreDA = new SongGenreDA();
 
         public List<Genre> GetAllGenres()
         {
@@ -65,6 +66,7 @@ namespace DataLayerFramework
 
         public void DeleteGenre(Genre genre)
         {
+            songGenreDA.DeleteGenre(genre.GenreId, songsDb);
             songsDb.Genres.Remove(genre);
             songsDb.SaveChanges();
         }

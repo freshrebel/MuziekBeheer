@@ -26,5 +26,31 @@ namespace DataLayerFramework
             songsDb.SongArtists.Remove(songArtistQuery.ToList()[0]);
             songsDb.SaveChanges();
         }
+
+        public void DeleteArtist(int artistId, SongsDb songsDb)
+        {
+            var songArtistQuery = from s in songsDb.SongArtists
+                                 where s.ArtistId == artistId
+                                 select s;
+            List<SongArtist> toDelete = songArtistQuery.ToList();
+            foreach (SongArtist s in songArtistQuery)
+            {
+                songsDb.SongArtists.Remove(s);
+            }
+            songsDb.SaveChanges();
+        }
+
+        public void DeleteSong(int songId, SongsDb songsDb)
+        {
+            var songArtistQuery = from s in songsDb.SongArtists
+                                 where s.SongId == songId
+                                 select s;
+            List<SongArtist> toDelete = songArtistQuery.ToList();
+            foreach (SongArtist s in songArtistQuery)
+            {
+                songsDb.SongArtists.Remove(s);
+            }
+            songsDb.SaveChanges();
+        }
     }
 }
